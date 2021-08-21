@@ -5,7 +5,8 @@
     "pages/map/map", 
     "pages/logs/logs",
     "pages/demo/demo", 
-    "pages/notice/notice"
+    "pages/notice/notice" ,
+    "pages/login/login" 
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -17,13 +18,13 @@
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
-      "iconPath": "icon/_home.png",
-      "selectedIconPath": "icon/home.png"
+      "iconPath": "icon/HOMEHOMEHOME.png",
+      "selectedIconPath": "icon/HOMEHOME.png"
     },{
       "pagePath": "pages/my/my",
       "text": "个人中心",
-      "iconPath": "icon/_my.png",
-      "selectedIconPath": "icon/my.png"
+      "iconPath": "icon/mymymy.png",
+      "selectedIconPath": "icon/mymy.png"
     }]
   },
   "usingComponents": {

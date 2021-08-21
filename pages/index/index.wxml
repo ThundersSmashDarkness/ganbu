@@ -30,6 +30,13 @@
 
 <van-divider contentPosition="left">文本</van-divider>
 
+
+<van-empty
+  class="custom-image"
+  image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+  description="施工中"
+/>
+
 <view class="vbnm">
 <view class='moki'>
   <button  bindtap='startRecordMp3' type='primary'>
