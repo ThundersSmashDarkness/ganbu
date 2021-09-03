@@ -72,7 +72,8 @@ Page({
       success:file=>{
         console.log("bindGetUserInfo获取用户信息成功！")
         console.log(file) 
-
+        const userInfo = file.userInfo;
+        wx.setStorageSync("userInfo",userInfo);
 
         wx.login({
           success: log => {
@@ -100,13 +101,16 @@ Page({
               success(res) {
                 console.log("登录成功", res)
                 // 获取到openid后将openid存入本地,同时放到全局变量里
+   
 
-                var app = getApp()
-                app.globalData.issignin = true;
-              
+                const session_id = res.data.session_id;
+               wx.setStorageSync('session_id', session_id);
+
                 wx.hideLoading()
                 // 然后跳转主页面
-            
+                wx.switchTab({
+                  url: '/pages/my/my',
+                })
                
               },
               fail(res){

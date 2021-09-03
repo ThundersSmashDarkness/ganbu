@@ -1,2 +1,55 @@
 <!--pages/map/map.wxml-->
-<text>pages/map/map.wxml</text>
+
+
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" polygons="{{polygons}}" bindregionchange="regionchange" show-compass="{{showCompass}}"
+  enable-rotate="{{enableRotate}}"
+  enable-zoom="{{enableZoom}}"
+  enable-scroll="{{enableScroll}}"
+  enable-satellite="{{enableSatellite}}"
+  bindmarkertap='gotohere' 
+  markers="{{markers}}"
+  data-markers="{{markers}}"
+    show-location style="width: 100%; height: 100vh;">
+
+
+<cover-view class='floatview_wrap'>
+    <cover-view bindtap="mapView" class="floatview">地图选点  </cover-view>
+    <cover-view bindtap="toggleSatellite" class="floatview">
+      {{ !enableSatellite ? '开启' : '关闭' }}卫星图
+    </cover-view>
+  </cover-view>
+  </map>
+
+
+
+
+  <!-- <cover-view>
+    <cover-view>
+      经度：{{longitude}}
+    </cover-view>
+    <cover-view>
+      纬度：{{latitude}}
+    </cover-view>
+  </cover-view>
+
+  <cover-view class="btn">
+    <cover-view bindtap="toggleShowCompass">
+      {{ !showCompass ? '显示' : '关闭' }}指南针
+    </cover-view>
+    <cover-view bindtap="toggleRotate">
+      {{ !enableRotate ? '开启' : '关闭' }}旋转
+    </cover-view>
+    <cover-view bindtap="toggleZoom">
+      {{ !enableZoom ? '开启' : '关闭' }}缩放
+    </cover-view>
+    <cover-view bindtap="toggleScroll">
+      {{ !enableScroll ? '开启' : '关闭' }}拖动
+    </cover-view>
+    <cover-view bindtap="toggleSatellite">
+      {{ !enableSatellite ? '开启' : '关闭' }}卫星图
+    </cover-view>
+  </cover-view> -->
+
+
+  
+    

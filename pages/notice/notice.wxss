@@ -1,1 +1,21 @@
 /* pages/notice/notice.wxss */
+@import '../../miniprogram_npm/@vant/weapp/common/index.wxss';
+
+page{
+background:#F7F8FA;
+}
+.title{
+  margin: 30rpx 20rpx;
+  font-size: 32rpx;
+  color:  gray; 
+}
+.out{
+
+  width: 100%;
+
+}
+
+.container{
+  width: 750rpx;
+  margin: 0;
+}

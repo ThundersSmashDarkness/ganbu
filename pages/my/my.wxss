@@ -39,6 +39,12 @@
   margin: auto;
   margin-top: 32rpx;
 }
+.out-btn {
+  width: 200rpx;
+  margin: auto;
+  margin-top: 64rpx;
+  
+}
 .my-box .head-bar{
   display: flex;
 

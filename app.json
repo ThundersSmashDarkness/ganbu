@@ -1,8 +1,9 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/shop/shop",
     "pages/my/my",
-    "pages/map/map", 
+    "pages/map/map",  
     "pages/logs/logs",
     "pages/demo/demo", 
     "pages/notice/notice" ,
@@ -20,12 +21,20 @@
       "text": "首页",
       "iconPath": "icon/HOMEHOMEHOME.png",
       "selectedIconPath": "icon/HOMEHOME.png"
-    },{
+    },
+    {
+      "pagePath": "pages/map/map",
+      "text": "防灾地图",
+      "iconPath": "icon/mapmap.png",
+      "selectedIconPath": "icon/mapmapmap.png"
+    },
+    {
       "pagePath": "pages/my/my",
       "text": "个人中心",
       "iconPath": "icon/mymymy.png",
       "selectedIconPath": "icon/mymy.png"
-    }]
+    }
+  ]
   },
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",

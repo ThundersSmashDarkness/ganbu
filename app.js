@@ -70,6 +70,9 @@ App({
     userInfo: null,
     openid: null,
     iscadres: false,
+    issginin:null
+  },
+  judgeData: {
     issginin:false
   }
 })

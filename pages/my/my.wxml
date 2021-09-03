@@ -4,10 +4,10 @@
 <view class="my-bar">
 	<image mode='aspectFill' class='background' src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F04%2F64%2F18%2F845874586e4d3ff.jpg&refer=http%3A%2F%2Fbpic.588ku.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632117382&t=a4c6e86159a8a932a66ecf86061fd64d'></image>	
 	<view class="my-box">
-		<view  class="login-btn">
+		<view  wx:if="{{!userInfo}}" class="login-btn">
 			<van-button type="default" block bind:click="SwitchToLoginPage">立即登录</van-button>
 		</view>	
-		<view  class="coupon-box">
+		<view  wx:if="{{userInfo}}"  class="coupon-box">
 			<view class="coupon" bindtap="goCoupons">
 				<view class="num">99+</view>
 				<view class="title1">通知</view>
@@ -23,7 +23,10 @@
 				<view class="num">4</view>
 				<view class="title1">干部星级</view>
 			</view>
+			
+			
 		</view>
+
 	</view>
 </view>
 
@@ -38,5 +41,8 @@
 	<van-cell icon="info-o" title="关于我们" size="large" is-link url="/pages/about/index" />
 	
 </view>
+<view wx:if="{{userInfo}}"  class="out-btn">
+				<van-button type="default"  block bind:click="loginout">退出登录</van-button>
+			</view>
 <view class="version">v0.0.0</view>
 

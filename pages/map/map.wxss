@@ -1,1 +1,29 @@
 /* pages/map/map.wxss */
+
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.floatview{
+  background-color:#0EC598;
+  width: 180rpx;
+  height: 80rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  margin-bottom: 28rpx;
+  margin-left: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  
+}
+
+.floatview_wrap{
+   display: flex;
+   position: fixed;
+   bottom: 0;
+   height: AUTO;
+   flex-direction:column;
+}

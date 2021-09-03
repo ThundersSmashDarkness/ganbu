@@ -20,7 +20,7 @@
 <van-grid border="{{false}}">
   <van-grid-item icon="setting-o" text="xx" />
   <van-grid-item icon="friends-o" text="xx" />
-  <van-grid-item icon="shop-o" text="xx" />
+  <van-grid-item icon="shop-o" text="养老商城" url="../shop/shop"/>
   <van-grid-item icon="records" text="发布"  url="../notice/notice"/>
   <van-grid-item icon="edit" text="xx" />
   <van-grid-item icon="points" text="xx" />
