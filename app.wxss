@@ -9,3 +9,7 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+page{
+  --themeColor1: #0ac496;
+  --themeColor2: #3f7ffc;
+}

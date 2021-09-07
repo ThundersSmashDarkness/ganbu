@@ -4,6 +4,8 @@
   position:fixed;
   justify-content: center;
   bottom:0;
+  left: 0;
+  right: 0;
   width: 100%;
   display: flex;
 }
@@ -29,13 +31,13 @@
 
 
 .btn {  
-  width: 80%;  
-  padding: 20rpx 0;  
-  border-radius: 10rpx;  
+  width: 50%;  
+  padding: 20rpx 0;   
   text-align: center;  
-  margin: 40rpx 10%;  
-  background: #000;  
+
+  background:#5bc1af;  
   color: #fff;  
+  display:inline-block;
 }  
   
 /*mask*/  
@@ -129,3 +131,126 @@ radio{
 .col-1 {-webkit-box-flex:1;box-flex:1;}  
 .fl { float: left;}  
 .fr { float: right;}
+
+
+
+page{
+  background-color: #fff;
+  padding-bottom: 120rpx;
+}
+.cates_container{
+  display: flex;
+}
+.left_menu{
+  flex: 2;
+}
+.menu_item{
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #ededed;
+  border-right: 1rpx solid #ededed;
+}
+.active{
+  color: var(--themeColor2);
+  border-left: 5px solid currentColor;
+}
+.right_content{
+  flex: 6;
+}
+.navi{
+  display: flex;
+  padding: 15rpx;
+}
+.navi image{
+  flex: 2;
+}
+.goods_content{
+  flex: 3;
+  padding-left: 20rpx;
+}
+.goods_name{
+  font-size: 32rpx;
+}
+.goods_detail{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 24rpx;
+  color: gray;
+}
+.price_wrap{
+  padding-top: 36rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.goods_price{
+  color: red;
+  font-weight: 600;
+  font-size: 32rpx;
+}
+.num_wrap{
+  display: flex;
+  margin-top: 5rpx;
+}
+.num_edit{
+  width: 38rpx;
+  height: 38rpx;
+  border: 5rpx solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--themeColor2);
+  font-weight: 700;
+  font-size: 34rpx;
+  padding-bottom: 5rpx;
+}
+.goods_num{
+  padding: 0 20rpx;
+}
+/* 底部结算栏 */
+.bottom_wrap{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 1rpx solid gray;
+  padding: 16rpx;
+}
+.title{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-right: 2rpx solid #000;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.totalPrice{
+  flex: 2;
+  display: flex;
+  align-items: center;
+  padding-left: 16rpx;
+  font-size: 30rpx;
+}
+.totalPriceText{
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.pay{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  /* background-color: var(--themeColor2); */
+  border-radius: 60rpx;
+  font-size: 36rpx;
+}

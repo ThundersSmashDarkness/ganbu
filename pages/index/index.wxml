@@ -40,7 +40,7 @@
 <view class="vbnm">
 <view class='moki'>
   <button  bindtap='startRecordMp3' type='primary'>
-  <text>   录音开始（mp3）</text>
+  <text>   点击录音开始（mp3）</text>
   </button>
 </view>
 <view class='moki'>
