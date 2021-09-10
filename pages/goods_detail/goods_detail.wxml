@@ -1,0 +1,32 @@
+<!--pages/goods_detail/goods_detail.wxml-->
+
+
+
+<view class="image">
+  <image mode="widthFix" src="{{goods.goods_url}}"></image>
+</view>
+<!-- 商品信息 -->
+<view class="goods_info">
+  <view class="name">{{goods.goods_name}}</view>
+  <view class="wrap">
+    <view class="price"><text class="price_text">{{goods.goods_price}}元</text> / 份</view>
+    <view class="num_wrap">
+      <block wx:if="{{goods.num}}">
+        <view class="num_edit" catchtap="handleNumEdit" data-operation="{{-1}}">-</view>
+        <view class="goods_num">{{goods.num}}</view>
+      </block>
+      <view class="num_edit" catchtap="handleNumEdit" data-operation="{{1}}">+</view>
+    </view>
+  </view>
+</view>
+<view class="goods_detail">
+  <view class="detail_title">商品详细</view>
+  <view class="text_wrap">
+    <view class="text_title">商品描述</view>
+    <view class="text_content">{{goods.goods_detail}}</view>
+  </view>
+  <view class="text_wrap">
+    <view class="text_title">原料</view>
+    <view class="text_content">鸡肉</view>
+  </view>
+</view>

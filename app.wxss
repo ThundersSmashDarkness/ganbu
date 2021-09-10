@@ -1,6 +1,6 @@
 /**app.wxss**/
 @import 'miniprogram_npm/@vant/weapp/common/index.wxss';
-.container {
+/* .container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -8,8 +8,16 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}  */
+page,view,text,swiper,swiper-item,image,navigator{
+  padding: 0rpx;
+  margin: 0rpx;
+  box-sizing: border-box;
+}
 page{
   --themeColor1: #0ac496;
   --themeColor2: #3f7ffc;
+}
+image{
+  width: 100%;
 }

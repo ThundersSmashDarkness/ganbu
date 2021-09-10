@@ -10,8 +10,8 @@ Page({
     enableScroll: true,
     enableRotate: true,
     enableSatellite: false,
-    latitude: "24.47951",
-    longitude: "118.08948",//这个是你的经纬度
+    latitude: "30.313368492093822",
+    longitude: "120.35572518322752",//这个是你的经纬度
     markers:[{
       "name": "火灾避难区",
       "lon": 120.379275,

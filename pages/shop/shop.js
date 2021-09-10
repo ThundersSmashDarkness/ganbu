@@ -151,4 +151,51 @@ Page({
     this.data.tag_id=e.detail.value.tagid;
   }
 
+
+
+
+  ,
+
+  handleItemTap(e){
+    const {index}= e.currentTarget.dataset;
+    console.log(e);
+    this.setData({
+      currentIndex:index,
+      // 重新选择分类时 右侧滚动条在最顶端
+      scrollTop: 0
+    })
+  },
+  handleNumEdit(e){
+    const {id,operation} = e.currentTarget.dataset;
+    let {rightContent,bgc,order} = this.data;
+    const index1 = rightContent.findIndex(v=>v.id==id);
+    rightContent[index1].num += operation;
+    order.totalPrice += rightContent[index1].goods_price * operation;
+    order.totalNum += operation;
+    if(order.totalNum == 0){
+      bgc = 'gray'
+    }else{
+      bgc = 'var(--themeColor2)'
+    }
+    // 更新订单
+    let goods = order.goods;
+    let index2 = goods.findIndex(v=>v.id ==  rightContent[index1].id)
+    if(index2 == -1){
+      goods.push(rightContent[index1])
+    }else{
+      goods[index2].num = rightContent[index1].num
+    }
+    this.setData({
+      order,
+      rightContent,
+      bgc
+    })
+    wx.setStorageSync('order', order)
+  },
+  onLoad: function (options) {
+    // 获取商品数据并把商品信息存到缓存中（未实现）  方便查看商品详细时使用
+    // 暂时先用这个代替
+    const {rightContent} = this.data;
+    wx.setStorageSync('rightContent', rightContent);
+  },
 })

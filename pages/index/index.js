@@ -4,6 +4,7 @@ const app = getApp()
 const recorderManager = wx.getRecorderManager();
 Page({
   data: {
+    SESSION:'',
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -115,7 +116,32 @@ sendRecord: function () {
     }
 });
 },
+villageinfo: function (){
+  var that =this 
+  const SESSION = wx.getStorageSync('session_id')
 
+
+   wx.request({
+    url: 'http://47.97.152.69:8080/village/allInfo',
+    header: {
+      'content-type':
+      'application/json' ,
+      'Cookie':'JSESSIONID='+SESSION
+    },
+    method: 'POST',
+    timeout: 0,
+    success: (res) => {console.log(res.data);},
+    fail: (res) => {console.log("失败");},
+    complete: (res) => {},
+  })
+
+
+
+  
+
+
+}
+,
 onLoad: function (options) {
     var that = this;
     recorderManager.onError(function () {

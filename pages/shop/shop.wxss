@@ -123,10 +123,10 @@ input {
     background: #fff;  
     color:#000 ;  
 }  
-radio{  
+/* radio{  
     margin-right: 20px;  
-}  
-.grid { display: -webkit-box; display: box; }  
+}   */
+.topgrid { display: -webkit-box; display: box; }  
 .col-0 {-webkit-box-flex:0;box-flex:0;}  
 .col-1 {-webkit-box-flex:1;box-flex:1;}  
 .fl { float: left;}  
@@ -136,7 +136,7 @@ radio{
 
 page{
   background-color: #fff;
-  padding-bottom: 120rpx;
+ 
 }
 .cates_container{
   display: flex;
@@ -200,7 +200,7 @@ page{
   width: 38rpx;
   height: 38rpx;
   border: 5rpx solid currentColor;
-  border-radius: 50%;
+  border-radius: 30%;
   display: flex;
   justify-content: center;
   align-items: center;

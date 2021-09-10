@@ -54,6 +54,7 @@
 </view>
 </view>
 
+<button bindtap='villageinfo' type='primary'><text>查询村庄家庭信息</text></button>
 
 
 <view class="container">

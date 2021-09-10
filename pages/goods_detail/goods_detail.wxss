@@ -1,0 +1,111 @@
+/* pages/goods_detail/goods_detail.wxss */
+
+.goods_info{
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 14rpx 20rpx;
+  padding: 20rpx 30rpx;
+}
+.name{
+  font-size: 44rpx;
+  font-weight: 600;
+}
+.wrap{
+  display: flex;
+  padding-top: 40rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.price{
+  font-size: 30rpx;
+}
+.price_text{
+  font-size: 38rpx;
+  font-weight: 600;
+  color: red;
+}
+.num_wrap{
+  display: flex;
+  margin-top: 5rpx;
+}
+.num_edit{
+  width: 38rpx;
+  height: 38rpx;
+  border: 5rpx solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--themeColor2);
+  font-weight: 700;
+  font-size: 34rpx;
+  padding-bottom: 5rpx;
+}
+.goods_num{
+  padding: 0 20rpx;
+}
+.goods_detail{
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx;
+  padding: 20rpx 30rpx;
+}
+.detail_title{
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.text_wrap{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.text_title{
+  flex: 1;
+  color: #666;
+}
+.text_content{
+  padding-left: 15rpx;
+  flex: 4;
+}
+/* 底部工具栏 */
+.bottom_wrap{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 1rpx solid gray;
+  padding: 16rpx;
+}
+.title{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-right: 2rpx solid #000;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.totalPrice{
+  flex: 2;
+  display: flex;
+  align-items: center;
+  padding-left: 16rpx;
+  font-size: 30rpx;
+}
+.totalPriceText{
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.pay{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  /* background-color: var(--themeColor2); */
+  border-radius: 60rpx;
+  font-size: 36rpx;
+}
