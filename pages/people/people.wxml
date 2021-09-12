@@ -1,0 +1,22 @@
+<!--pages/people/people.wxml-->
+<scroll-view scroll-top="{{scrollTop}}" scroll-y class="horse_content">
+        <view class="goods_group">
+          <!-- 一重循环放类名 -->
+          <view class="goods_list">
+            <navigator class="navi"  wx:for="{{houseContent}}" wx:key="house_id" >
+              <image mode="widthFix" src="{{item.photo_url}}"/>
+              <view class="house_content">
+                <view class="house_id">家庭id：{{item.house_id}}</view>
+                <view class="cantact">联系方式：{{item.contact}}</view>
+                  <view class="village_name">所属村庄：{{item.name}}</view>
+                  <view class="house_address">家庭住址：{{item.address}}</view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </scroll-view>
+
+
+  <view class="add_wrap" bindtap="addHouse" hover-class="bigger">
+   <image src="../../icon/shop/addicon.png"></image>
+</view>   

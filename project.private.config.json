@@ -35,6 +35,18 @@
           "pathName": "pages/index/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/people/people",
+          "pathName": "pages/people/people",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/escapeSituation/escapeSituation",
+          "pathName": "pages/escapeSituation/escapeSituation",
+          "query": "",
+          "scene": null
         }
       ]
     }

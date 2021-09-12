@@ -1,0 +1,53 @@
+/* pages/people/people.wxss */
+
+.navi{
+  display: flex;
+  padding: 15rpx;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 15rpx;
+  border-radius: 18rpx;
+  background-color: var(--themeColor1);
+}
+.navi image{
+  flex: 3.5;
+}
+
+
+
+.house_content{
+flex:4.5;
+margin: 8rpx;
+margin-left: 32rpx;
+
+}
+
+.house_id{
+  font-size: 28rpx;
+  color: white;
+}
+.cantact{
+  font-size: 28rpx;
+  color: white;
+}
+.village_name{
+  font-size: 28rpx;
+  color: white;
+}
+.house_address{
+  font-size: 28rpx;
+  color: white;
+}
+
+
+.add_wrap{
+  justify-content: center;
+  bottom:0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+}
+.add_wrap image{
+  height: 268rpx;
+  width: 268rpx;
+}

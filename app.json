@@ -1,6 +1,9 @@
 {
   "pages":[
     "pages/index/index",
+   "pages/escapeSituation/escapeSituation", 
+    "pages/addhouse/addhouse", 
+    "pages/people/people", 
     "pages/shop/shop",
     "pages/goods_detail/goods_detail", 
     "pages/my/my",

@@ -68,6 +68,15 @@ Page({
       zIndex: 1
     }]
   },
+
+  escape:function (){
+
+    wx.navigateTo({
+      url: '../escapeSituation/escapeSituation',
+    })
+
+  },
+
   mapView: function () {
     var that = this
     wx.chooseLocation({

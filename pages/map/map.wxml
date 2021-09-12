@@ -17,6 +17,8 @@
     <cover-view bindtap="toggleSatellite" class="floatview">
       {{ !enableSatellite ? '开启' : '关闭' }}卫星图
     </cover-view>
+
+    <cover-view bindtap="escape" class="escapeView">撤离情况</cover-view>
   </cover-view>
   </map>
 

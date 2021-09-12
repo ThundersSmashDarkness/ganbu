@@ -1,0 +1,16 @@
+/* pages/escapeSituation/escapeSituation.wxss */
+
+.escape_wrap{
+
+
+  display: flex;
+  font-size: 35rpx;
+  color: #333;
+  font-family: Helvetica,Arial,"Helvetica Neue","Droid Sans","Microsoft YaHei",sans-serif;
+
+}
+
+.escape_canvas {
+  width: 100%;
+  height: 200rpx;
+}
