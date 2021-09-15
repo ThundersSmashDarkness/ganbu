@@ -13,6 +13,12 @@
 }
 
 
+.content_wrap{
+
+   display: flex;
+   margin-top: 20rpx;
+}
+
 
 .house_content{
 flex:4.5;

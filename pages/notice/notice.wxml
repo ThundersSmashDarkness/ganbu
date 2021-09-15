@@ -18,33 +18,3 @@
     <view class="van-hairline--surround"></view>
 
 </view>
-<view class="title">请选择建议类型</view>
-<van-cell-group>
-  <van-field
-    value="输入框已禁用"
-    label="用户名"
-    border="{{ false }}"
-  />
-  <van-field
-    value="输入框已禁用"
-    label="用户名"
-    border="{{ false }}"
-  />
-  <van-field
-    value="输入框已禁用"
-    label="用户名"
-    border="{{ false }}"
-  />
-
-
-  <van-field
-    value="{{ message }}"
-    label="留言"
-    type="textarea"
-    placeholder="请输入留言"
-    autosize
-    border="{{ false }}"
-  />
-</van-cell-group > 
-<view class="van-hairline--surround">  
-</view>

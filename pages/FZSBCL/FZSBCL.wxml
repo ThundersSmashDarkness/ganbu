@@ -1,0 +1,23 @@
+<van-swipe-cell
+  id="swipe-cell"
+  wx:for="{{number}}"
+  wx:key="id"
+  right-width="{{ 65 }}"
+  left-width="{{ 65 }}"
+  async-close
+  bind:close="onClose"
+  class="singleCELL"
+>
+  <view slot="left">选择</view>
+  <van-cell-group>
+    <van-cell value="内容" icon="shop-o" is-link>
+  <view slot="title">
+    <view class="van-cell-text">单元格</view>
+    <van-tag type="danger">标签</van-tag>
+    
+  </view>
+</van-cell>
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell>
+<van-dialog id="van-dialog" />

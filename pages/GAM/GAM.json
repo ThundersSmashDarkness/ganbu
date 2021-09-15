@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-circle": "@vant/weapp/circle/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-card": "@vant/weapp/card/index"
+  }
+}

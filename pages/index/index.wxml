@@ -9,26 +9,55 @@
 
 </image>
 
-<van-notice-bar
-  left-icon="volume-o"
-  text="村口集合，自带水泥"
-  
-/>
+
 
 <text class="top-comment" >晴</text>
 
 <van-grid border="{{false}}">
-  <van-grid-item icon="setting-o" text="xx" />
+  <van-grid-item icon="warning-o" icon-color="red" text="紧急疏散" />
   <van-grid-item icon="friends-o" text="人员管理" url="../people/people" />
   <van-grid-item icon="shop-o" text="养老商城" url="../shop/shop"/>
   <van-grid-item icon="records" text="发布"  url="../notice/notice"/>
-  <van-grid-item icon="edit" text="xx" />
-  <van-grid-item icon="points" text="xx" />
-  <van-grid-item icon="coupon-o" text="xx" />
-  <van-grid-item icon="comment-o" text="xx" />
+  <van-grid-item icon="edit" text="防灾上报处理" url="../FZSBCL/FZSBCL"/>
+  <van-grid-item icon="points" text="物资管理" url="../GAM/GAM" />
+  <van-grid-item icon="coupon-o" text="物资申请处理" />
+  <van-grid-item icon="comment-o" text="问题上报" />
 </van-grid>
 
-<van-divider contentPosition="left">文本</van-divider>
+<van-notice-bar
+  left-icon="volume-o"
+  text="富强、民主、文明、和谐，自由、平等、公正、法治，爱国、敬业、诚信、友善。"
+  
+/>
+
+<van-divider contentPosition="left">村民通知</van-divider>
+
+
+<van-swipe-cell
+  id="swipe-cell"
+  wx:for="{{villagerNotice}}"
+  wx:key="id"
+  right-width="{{ 65 }}"
+  left-width="{{ 65 }}"
+  async-close
+  bind:close="onClose"
+  class="singleCELL"
+>
+  <view slot="left">选择</view>
+  <van-cell-group>
+    <van-cell value="内容" icon="description"  is-link>
+  <view slot="title">
+    <view class="van-cell-text">通知标题</view>
+    <van-tag type="danger">紧急通知</van-tag>
+    
+  </view>
+</van-cell>
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell>
+<van-dialog id="van-dialog" />
+
+
 
 
 <van-empty

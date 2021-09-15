@@ -1,5 +1,7 @@
 <!--pages/people/people.wxml-->
-<scroll-view scroll-top="{{scrollTop}}" scroll-y class="horse_content">
+
+  <view> 
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y class="content_wrap">
         <view class="goods_group">
           <!-- 一重循环放类名 -->
           <view class="goods_list">
@@ -20,3 +22,6 @@
   <view class="add_wrap" bindtap="addHouse" hover-class="bigger">
    <image src="../../icon/shop/addicon.png"></image>
 </view>   
+  </view>
+
+

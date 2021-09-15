@@ -1,5 +1,6 @@
 // app.js
 // var loginUtil = require("/utils/login.js")
+import Dialog from 'miniprogram_npm/@vant/weapp/dialog/dialog';
 App({
   onLaunch() {
     // 展示本地存储能力

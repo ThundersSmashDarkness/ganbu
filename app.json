@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/FZSBCL/FZSBCL", 
+    "pages/GAM/GAM",
    "pages/escapeSituation/escapeSituation", 
     "pages/addhouse/addhouse", 
     "pages/people/people", 
@@ -44,7 +46,12 @@
     "van-button": "@vant/weapp/button/index",
     "van-grid": "@vant/weapp/grid/index",
   "van-grid-item": "@vant/weapp/grid-item/index",
-    "van-icon":"@vant/weapp/icon/index"
+    "van-icon":"@vant/weapp/icon/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-tag": "@vant/weapp/tag/index"
   },
   "sitemapLocation": "sitemap.json"
 }

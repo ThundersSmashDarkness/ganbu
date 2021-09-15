@@ -1,5 +1,6 @@
 // index.js
 // 获取应用实例
+
 const app = getApp()
 const recorderManager = wx.getRecorderManager();
 Page({
@@ -11,6 +12,19 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+,
+    villagerNotice:[
+      {id:"0"},
+      {id:"1"},
+      {id:"2"},
+      {id:"3"},
+      {id:"4"},
+      {id:"5"},
+      {id:"5"}
+
+
+
+    ]
   },
   bindtest:function () {
 

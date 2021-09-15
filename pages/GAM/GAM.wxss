@@ -1,0 +1,44 @@
+/* pages/GAM/GAM.wxss */
+
+.circle_wrap{
+  margin: 20rpx;
+   width: 100%;
+   display: flex;
+   margin-top: 80rpx;
+   align-items: center;
+  justify-content: center;
+}
+
+.step_wrap{
+  display:flex;
+  margin-top: 50rpx;
+
+}
+
+.top_content{
+
+ margin: 80rpx;
+ margin-top: 20rpx;
+ width: 80%;
+ font-weight: 600;
+ color: red;
+}
+
+.right_content{
+
+   flex:6;
+   font-size: larger;
+   margin-left:28rpx;
+}
+
+.control_step_wrap{
+  right: 0;
+}
+
+
+
+.circle{
+padding: 10rpx;
+text-size-adjust: 20rpx;
+font-size: 58rpx;
+}

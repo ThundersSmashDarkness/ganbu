@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    active: 1,
    scrollTop:0,
    houseContent:[
 {address:"浙江省XX市XX县XX乡XX村XX街道",name:"村庄1",village_id:"1",house_id:"a1",contact:"88753977",photo_url:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp0.meituan.net%2Fdpmerchantpic%2F3c916d38b260ce8fc8ba7ce89fb391ca883672.jpg&refer=http%3A%2F%2Fp0.meituan.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1633950694&t=d88f46ca846903c70c4d4eb58e2dda7e"},
@@ -73,5 +74,10 @@ Page({
     wx.navigateTo({
       url: '../addhouse/addhouse',
     })
-  }
+  },onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none',
+    });
+  },
 })

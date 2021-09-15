@@ -1,0 +1,7 @@
+/* pages/FZSBCL/FZSBCL.wxss */
+
+.singleCELL{
+
+  margin: 20rpx;
+
+}

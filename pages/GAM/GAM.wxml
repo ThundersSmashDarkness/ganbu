@@ -1,0 +1,102 @@
+<!--pages/GAM/GAM.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="食品">
+  <view class="top_content">
+  
+   注意：请根据物资剩余容量和总量进行计算后调整百分比。
+  
+  </view>
+  <van-divider contentPosition="left">食品存量环状图</van-divider>
+  <view  class="circle_wrap">
+    <van-circle value="{{foodvalue}}" text="食品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#0ac496" size="250" max="500" class="circle" />
+  </view>
+
+ <view class="step_wrap">
+
+  <view  class="right_content">
+   剩余食品存量百分比
+  </view>
+
+  <van-stepper value="{{foodvalue}}"  bind:change="onFoodChange" class="control_step_wrap" />
+ </view>
+
+   
+
+  
+  </van-tab>
+
+
+
+
+
+
+
+  <van-tab title="饮品">
+    <view class="top_content">
+  
+  注意：请根据物资剩余容量和总量进行计算后调整百分比。
+ 
+ </view>
+ <van-divider contentPosition="left">饮品存量环状图</van-divider>
+ <view  class="circle_wrap">
+   <van-circle value="{{drinkvalue}}" text="饮品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#3f7ffc" size="250" max="500" class="circle" />
+ </view>
+
+<view class="step_wrap">
+
+ <view  class="right_content">
+  剩余饮品存量百分比
+ </view>
+
+ <van-stepper value="{{drinkvalue}}"  bind:change="onDrinkChange" class="control_step_wrap" />
+</view>
+
+  </van-tab>
+
+
+
+  <van-tab title="药品">
+  
+    <view class="top_content">
+  
+  注意：请根据物资剩余容量和总量进行计算后调整百分比。
+ 
+ </view>
+ <van-divider contentPosition="left">药品存量环状图</van-divider>
+ <view  class="circle_wrap">
+   <van-circle value="{{medicalvalue}}" text="药品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#FAEBD7" size="250" max="500" class="circle" />
+ </view>
+
+<view class="step_wrap">
+
+ <view  class="right_content">
+  剩余药品存量百分比
+ </view>
+
+ <van-stepper value="{{medicalvalue}}"  bind:change="onMedicalChange" class="control_step_wrap" />
+</view>
+
+  
+  </van-tab>
+  <van-tab title="日用品">
+    <view class="top_content">
+  
+  注意：请根据物资剩余容量和总量进行计算后调整百分比。
+ 
+ </view>
+ <van-divider contentPosition="left">食品存量环状图</van-divider>
+ <view  class="circle_wrap">
+   <van-circle value="{{dailyvalue}}" text="食品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#7FFFD4" size="250" max="500" class="circle" />
+ </view>
+
+<view class="step_wrap">
+
+ <view  class="right_content">
+  剩余日用品存量百分比
+ </view>
+
+ <van-stepper value="{{dailyvalue}}"  bind:change="onDailyChange" class="control_step_wrap" />
+</view>
+
+  </van-tab>
+</van-tabs>

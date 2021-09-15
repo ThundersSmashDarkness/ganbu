@@ -47,6 +47,18 @@
           "pathName": "pages/escapeSituation/escapeSituation",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/GAM/GAM",
+          "pathName": "pages/GAM/GAM",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/FZSBCL/FZSBCL",
+          "pathName": "pages/FZSBCL/FZSBCL",
+          "query": "",
+          "scene": null
         }
       ]
     }
