@@ -8,16 +8,20 @@
   bind:close="onClose"
   class="singleCELL"
 >
-  <view slot="left">选择</view>
-  <van-cell-group>
-    <van-cell value="内容" icon="shop-o" is-link>
+  <view slot="left">确认</view>
+  <van-cell-group >
+    <van-cell value="点击查看详情" icon="home-o" is-link >
   <view slot="title">
-    <view class="van-cell-text">单元格</view>
-    <van-tag type="danger">标签</van-tag>
-    
+    <view class="van-cell-text">{{item.house_id}}家庭防灾上报情况</view>
+    <van-tag wx:if="{{item.exceptional_case}}"  type="danger" calss="biaoqian">特殊情况</van-tag>
+    <view>  </view>
+    <van-tag wx:if="{{item.isDangerHouse}}" 
+      type="warning" calss="biaoqian">危房</van-tag>
+      <view>  </view>
+    <van-tag wx:if="{{item.isconfirmed}}"  type="success" calss="biaoqian">已与网格长确认</van-tag>
   </view>
 </van-cell>
   </van-cell-group>
-  <view slot="right">删除</view>
+  <view slot="right">打回</view>
 </van-swipe-cell>
 <van-dialog id="van-dialog" />

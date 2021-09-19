@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/health/health", 
     "pages/FZSBCL/FZSBCL", 
     "pages/GAM/GAM",
    "pages/escapeSituation/escapeSituation", 
@@ -27,6 +28,12 @@
       "text": "首页",
       "iconPath": "icon/HOMEHOMEHOME.png",
       "selectedIconPath": "icon/HOMEHOME.png"
+    },
+    {
+      "pagePath": "pages/health/health",
+      "text": "健康中心",
+      "iconPath": "icon/health.png",
+      "selectedIconPath": "icon/health.png"
     },
     {
       "pagePath": "pages/map/map",

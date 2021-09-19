@@ -39,6 +39,5 @@
 
 .circle{
 padding: 10rpx;
-text-size-adjust: 20rpx;
-font-size: 58rpx;
+
 }

@@ -8,7 +8,7 @@
   </view>
   <van-divider contentPosition="left">食品存量环状图</van-divider>
   <view  class="circle_wrap">
-    <van-circle value="{{foodvalue}}" text="食品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#0ac496" size="250" max="500" class="circle" />
+    <van-circle value="{{foodvalue}}" text="食品存量" speed="10000" stroke-width="28" layer-color="#eeeeee" color="#0ac496" size="250" max="500" class="circle" />
   </view>
 
  <view class="step_wrap">

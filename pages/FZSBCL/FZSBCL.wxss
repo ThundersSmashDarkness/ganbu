@@ -2,6 +2,38 @@
 
 .singleCELL{
 
-  margin: 20rpx;
+  margin:5rpx;
 
+}
+
+.van-swipe-cell__left{
+  width: 120rpx;
+  height: 100%;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  background-color:rgb(8, 189, 53);
+  word-wrap: break-word;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+  /*文本垂直居中*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.van-swipe-cell__right {
+  width: 130rpx;
+  height: 100%;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+  word-wrap: break-word;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+  /*文本垂直居中*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

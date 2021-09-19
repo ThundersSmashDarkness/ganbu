@@ -8,13 +8,13 @@ Page({
    */
   data: {
    number:[
-{id:"0"},
-{id:"1"},
-{id:"2"},
-{id:"3"},
-{id:"4"},
-{id:"5"},
-{id:"5"}
+{id:"0",house_id:"a1",exceptional_case:true,isDangerHouse:true,isconfirmed:true},
+{id:"1",house_id:"b1",exceptional_case:false,isDangerHouse:false,isconfirmed:true},
+{id:"2",house_id:"c1",exceptional_case:false,isDangerHouse:true,isconfirmed:false},
+{id:"3",house_id:"a2",exceptional_case:true,isDangerHouse:false,isconfirmed:false},
+{id:"4",house_id:"a8",exceptional_case:true,isDangerHouse:false,isconfirmed:true},
+{id:"5",house_id:"d1",exceptional_case:true,isDangerHouse:true,isconfirmed:true},
+{id:"6",house_id:"d4",exceptional_case:false,isDangerHouse:false,isconfirmed:true}
    ]
   },
   onClose(event) {
