@@ -14,6 +14,7 @@ Page({
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
 ,
     villagerNotice:[
+    
       {id:"0"},
       {id:"1"},
       {id:"2"},
@@ -24,7 +25,8 @@ Page({
 
 
 
-    ]
+    ],
+    fangzaishangbaoshu:0,
   },
   bindtest:function () {
 
@@ -157,6 +159,15 @@ villageinfo: function (){
 }
 ,
 onLoad: function (options) {
+
+
+   //上报处理数量
+
+   wx.setStorageSync('fangzaishangbaoshu', 9)
+
+
+
+
     var that = this;
     recorderManager.onError(function () {
         that.tip("录音失败！")
@@ -173,6 +184,18 @@ onLoad: function (options) {
     this.innerAudioContext.onError((res) => {
         that.tip("播放录音失败！")
     })
+
+},
+
+onShow: function () {
+
+  const SBS = wx.getStorageSync('fangzaishangbaoshu')
+
+  this.setData({
+
+  fangzaishangbaoshu:SBS
+
+  })
 
 },
 

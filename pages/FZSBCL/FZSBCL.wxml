@@ -4,11 +4,13 @@
   wx:key="id"
   right-width="{{ 65 }}"
   left-width="{{ 65 }}"
+  speed="10000"
   async-close
   bind:close="onClose"
   class="singleCELL"
 >
-  <view slot="left">确认</view>
+  <view slot="left" >确认</view>
+  
   <van-cell-group >
     <van-cell value="点击查看详情" icon="home-o" is-link >
   <view slot="title">
@@ -23,5 +25,6 @@
 </van-cell>
   </van-cell-group>
   <view slot="right">打回</view>
+  
 </van-swipe-cell>
 <van-dialog id="van-dialog" />

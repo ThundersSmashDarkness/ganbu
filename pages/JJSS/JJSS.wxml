@@ -1,0 +1,16 @@
+<!--pages/JJSS/JJSS.wxml-->
+<view class="top_title">紧急撤离</view>
+<view class="middle_context">请选择撤离类型，并点击下方按钮</view>
+
+<view class="opinion_type">
+          <view class="title">请选择建议类型</view>
+          <view class="btn_wrap">
+            <view id="type" class="btn" wx:for="{{type}}" wx:key="name" bindtap="handletouch1" data-index1="{{index}}" style="background:{{item.bgc}};color:{{item.color}};">{{item.name}}</view>
+          </view>
+        </view>
+
+<view class="{{linkstart?'na-switch-card na-switch-card-on' : 'na-switch-card'}}"  bindtap="LINKSTART">
+			<view class="na-switch-card-bg"></view>
+</view>
+
+<van-toast id="custom-selector" />

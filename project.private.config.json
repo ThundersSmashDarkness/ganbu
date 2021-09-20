@@ -59,6 +59,18 @@
           "pathName": "pages/FZSBCL/FZSBCL",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/JJSS/JJSS",
+          "pathName": "pages/JJSS/JJSS",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WTSB/WTSB",
+          "pathName": "pages/WTSB/WTSB",
+          "query": "",
+          "scene": null
         }
       ]
     }

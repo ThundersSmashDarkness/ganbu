@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/WTSB/WTSB", 
+    "pages/JJSS/JJSS", 
     "pages/health/health", 
     "pages/FZSBCL/FZSBCL", 
     "pages/GAM/GAM",
@@ -58,7 +60,8 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
-    "van-tag": "@vant/weapp/tag/index"
+    "van-tag": "@vant/weapp/tag/index",
+    "van-toast": "@vant/weapp/toast/index"
   },
   "sitemapLocation": "sitemap.json"
 }

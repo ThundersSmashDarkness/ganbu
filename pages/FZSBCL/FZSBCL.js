@@ -1,5 +1,5 @@
 // pages/FZSBCL/FZSBCL.js
-
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
 
 Page({
 
@@ -22,8 +22,9 @@ Page({
     switch (position) {
       case 'left':
         Dialog.confirm({
-          message: '进入详情页面？',
+          message: '再次确认',
         }).then(() => {
+
           instance.close();
         });
         break;
@@ -32,7 +33,7 @@ Page({
         break;
       case 'right':
         Dialog.confirm({
-          message: '确定删除吗？',
+          message: '确定打回吗？',
         }).then(() => {
           instance.close();
         });
@@ -96,3 +97,7 @@ Page({
 
   }
 })
+
+
+
+

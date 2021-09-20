@@ -14,14 +14,14 @@
 <text class="top-comment" >晴</text>
 
 <van-grid border="{{false}}">
-  <van-grid-item icon="warning-o" icon-color="red" text="紧急疏散" />
+  <van-grid-item icon="warning-o" icon-color="red" text="紧急疏散" url="../JJSS/JJSS" />
   <van-grid-item icon="friends-o" text="人员管理" url="../people/people" />
   <van-grid-item icon="shop-o" text="养老商城" url="../shop/shop"/>
   <van-grid-item icon="records" text="发布"  url="../notice/notice"/>
-  <van-grid-item icon="edit" text="防灾上报处理" url="../FZSBCL/FZSBCL"/>
+  <van-grid-item icon="edit" badge="{{fangzaishangbaoshu}}" text="防灾上报处理" url="../FZSBCL/FZSBCL"/>
   <van-grid-item icon="points" text="物资管理" url="../GAM/GAM" />
   <van-grid-item icon="coupon-o" text="物资申请处理" />
-  <van-grid-item icon="comment-o" text="问题上报" />
+  <van-grid-item icon="comment-o" text="问题上报" url="../WTSB/WTSB"/>
 </van-grid>
 
 <van-notice-bar
