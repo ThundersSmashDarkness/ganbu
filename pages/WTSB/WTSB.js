@@ -5,7 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
+    position:{},
+    num: '',
+    isShows:[false,false,false,false]
+  },
 
+
+  formSubmit(e){
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    const position = e.detail.value;
+    wx.setStorageSync('position', position)
+    this.setData({
+      position
+    })
+  },
+  handleChange(e){
+    console.log(e.detail.value);
+    let num = e.detail.value;
+    if(num > 6){
+      num = '';
+      this.setData({
+        num
+      })
+    }
   },
 
   /**

@@ -7,6 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+   allReadySendHouse:80,
+   specialHouse:2,
+   allReadyConfirm:68,
+   dangerousHouse:12,
    number:[
 {id:"0",house_id:"a1",exceptional_case:true,isDangerHouse:true,isconfirmed:true},
 {id:"1",house_id:"b1",exceptional_case:false,isDangerHouse:false,isconfirmed:true},
@@ -24,8 +28,12 @@ Page({
         Dialog.confirm({
           message: '再次确认',
         }).then(() => {
-
           instance.close();
+
+          var SBS = wx.getStorageSync('fangzaishangbaoshu');
+          SBS=SBS-1;
+          wx.setStorageSync('fangzaishangbaoshu', SBS);
+
         });
         break;
       case 'cell':
@@ -36,6 +44,9 @@ Page({
           message: '确定打回吗？',
         }).then(() => {
           instance.close();
+          var SBS = wx.getStorageSync('fangzaishangbaoshu');
+          SBS=SBS-1;
+          wx.setStorageSync('fangzaishangbaoshu', SBS);
         });
         break;
     }

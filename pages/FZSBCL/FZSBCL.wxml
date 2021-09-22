@@ -1,3 +1,41 @@
+
+
+<view class="top_content">
+
+
+  <view class="top_text">数据汇总面板</view>
+
+<view class="top_circle_wrap">
+  <van-circle class="top_circle" value="{{ allReadySendHouse }}" stroke-width="6" text="已上报家庭" size="150" stroke-width="14" color="#007a67"/>
+</view>
+
+<view class="top_circle_wrap">
+  <van-circle class="top_circle" value="{{ specialHouse }}" stroke-width="6" text="特殊情况" size="150" stroke-width="14" color="#f78f1e"/>
+</view>
+
+<view class="top_circle_wrap">
+  <van-circle class="top_circle" value="{{ allReadyConfirm }}" stroke-width="6" text="已确认家庭" size="150" stroke-width="14" color="#009979"/>
+</view>
+
+<view class="top_circle_wrap">
+  <van-circle class="top_circle" value="{{ dangerousHouse }}" stroke-width="6" text="危房" size="150" stroke-width="14" color="#ffc808"/>
+</view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<van-divider contentPosition="center">上报情况</van-divider>
+
 <van-swipe-cell
   id="swipe-cell"
   wx:for="{{number}}"

@@ -1,8 +1,34 @@
 /* pages/FZSBCL/FZSBCL.wxss */
+page{
+
+background-color: rgba(9, 139, 15, 0.884);
+
+}
+.top_text{
+  text-align: center;
+   margin: 10rpx;
+width: 100%;
+}
+.top_content{
+  background-color: rgba(245, 245, 245, 0.555);
+  display: flex;
+  display: -webkit-flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+ border-radius: 50rpx;
+ margin: 30rpx;
+}
+
+.top_circle_wrap{
+     border-color: black;
+     flex:4;
+     margin: 18rpx;
+}
 
 .singleCELL{
 
-  margin:5rpx;
+  margin:0rpx;
 
 }
 

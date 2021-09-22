@@ -1,1 +1,86 @@
 /* pages/WTSB/WTSB.wxss */
+
+
+.note{
+  margin: 50rpx 0rpx 60rpx 22rpx;
+  font-size: 35rpx;
+  color:grey;
+}
+.infomation{
+  display: block;
+  padding: 40rpx 35rpx 10rpx;
+  background-color: #ffffff;
+  margin: 40rpx 20rpx;
+  font-size: 34rpx;
+  border-radius: 14rpx;
+}
+.wrap{
+  display: flex;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.wrap_otherinformation{
+  display: flex;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.text_o{
+  flex: 6;
+  font-size: 30rpx;
+}
+.Input_o{
+  flex: 7;
+  padding-left: 10rpx;
+  border-right: 5rpx dotted black;
+}
+.relation_o{
+  flex: 7;
+  padding-left: 10rpx;
+}
+.wrap-bottom{
+  display: flex;
+  padding-bottom: 20rpx;
+}
+.text{
+  flex: 3;
+}
+.Input{
+  flex: 7;
+}
+.submit_area{
+  margin-top: 150rpx;
+}
+.submit{
+  width: 95%;
+  margin-bottom: 100rpx;
+}
+.label1{
+  margin-right: 40rpx;
+}
+.text_wrap{
+  flex: 3;
+}
+.tip{
+  font-size: 25rpx;
+  color: red;
+  padding-top: 10rpx;
+  text-decoration: underline;
+}
+.text_tishi{
+  font-size: 25rpx;
+  color: #666;
+  padding-top: 10rpx;
+}
+.text_area{
+  border: 2rpx solid black;
+  padding: 20rpx;
+  margin: 22rpx 0rpx;
+}
+.submit-btn{
+  width: 38%;
+  border-radius: 58rpx;
+  background-color:#0ac496;
+  color: #eee;
+}

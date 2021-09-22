@@ -2,10 +2,10 @@
   <view class="page-body">
     <form catchsubmit="formSubmit" catchreset="formReset">
     
-      <input class="weui-input" name="agency" placeholder="这是一个输入框" />
-      <input class="weui-input" name="title" placeholder="这是一个输入框" />
-      <input class="weui-input" name="type" placeholder="这是一个输入框" />
-      <input class="weui-input" name="content" placeholder="这是一个输入框" />
+      <input class="notice_input" name="agency" placeholder="发布机构" />
+      <input class="notice_input" name="title" placeholder="标题" />
+      <input class="notice_input" name="type" placeholder="通知类型" />
+      <input class="notice_input" name="content" placeholder="通知内容" />
 
       <view class="btn-area">
         <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>

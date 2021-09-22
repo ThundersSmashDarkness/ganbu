@@ -61,7 +61,9 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
     "van-tag": "@vant/weapp/tag/index",
-    "van-toast": "@vant/weapp/toast/index"
+    "van-toast": "@vant/weapp/toast/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-circle": "@vant/weapp/circle/index"
   },
   "sitemapLocation": "sitemap.json"
 }

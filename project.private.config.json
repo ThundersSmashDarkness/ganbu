@@ -71,6 +71,12 @@
           "pathName": "pages/WTSB/WTSB",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/notice/notice",
+          "pathName": "pages/notice/notice",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -158,13 +158,24 @@ villageinfo: function (){
 
 }
 ,
+onPullDownRefresh: function () {
+ //上报处理数量
+ wx.setStorageSync('fangzaishangbaoshu', 10)
+
+ const SBS = wx.getStorageSync('fangzaishangbaoshu')
+
+  this.setData({
+
+  fangzaishangbaoshu:SBS
+
+  })
+
+},
+
 onLoad: function (options) {
 
 
-   //上报处理数量
-
-   wx.setStorageSync('fangzaishangbaoshu', 9)
-
+  
 
 
 

@@ -1,2 +1,30 @@
-<!--pages/WTSB/WTSB.wxml-->
-<text>pages/WTSB/WTSB.wxml</text>
+
+<view class="note">
+  注意事项：无遇特殊情况，请勿使用此通道！
+</view>
+<form catchsubmit="formSubmit" class="from_wrap">
+  <view class="infomation">
+    <view class="wrap">
+    <view class="text">干部姓名</view>
+    <input class="Input" type="text" placeholder="请输入您的姓名" name="name"/>
+    </view>
+    <view class="wrap">
+      <view class="text">所属村庄</view>
+      <input class="Input" type="text" placeholder="请输入村庄全称或村庄id" name="village"/>
+    </view>
+    <view class="wrap">
+      <view class="text">联系方式</view>
+      <input class="Input" type="text" placeholder="请输入您的联系方式" name="contact"/>
+    </view>
+    
+    <view class="warp-bottom">
+      <view class="text">问题详细情况说明</view>
+      <view class="text_tishi">问题原因，解决难点</view>
+      <textarea class="text_area" name="special_situation"
+      maxlength="-1"></textarea>
+    </view>
+  </view>
+  <view class="submit_area">
+  <button class="submit-btn" form-type="submit">上报</button>
+  </view>
+</form>
