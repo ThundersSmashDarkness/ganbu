@@ -3,7 +3,7 @@
 <view class="middle_context">请选择撤离类型，并点击下方按钮</view>
 
 <view class="opinion_type">
-          <view class="title">请选择建议类型</view>
+          <view class="title">请选择逃离类型</view>
           <view class="btn_wrap">
             <view id="type" class="btn" wx:for="{{type}}" wx:key="name" bindtap="handletouch1" data-index1="{{index}}" style="background:{{item.bgc}};color:{{item.color}};">{{item.name}}</view>
           </view>

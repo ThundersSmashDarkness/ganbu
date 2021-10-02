@@ -20,7 +20,7 @@
     <view class="warp-bottom">
       <view class="text">问题详细情况说明</view>
       <view class="text_tishi">问题原因，解决难点</view>
-      <textarea class="text_area" name="special_situation"
+      <textarea class="text_area" name="special_situation" 
       maxlength="-1"></textarea>
     </view>
   </view>

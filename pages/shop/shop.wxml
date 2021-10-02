@@ -9,9 +9,9 @@
 
 
 
-<van-tabs color="var(--themeColor1)" line-width="20%" title-active-color="var(--themeColor1)" active="{{active}}">
+<van-tabs color="var(--themeColor1)" line-width="20%" title-active-color="var(--themeColor1)" active="{{active}}" bind:click="daleiChange">
   <van-tab title="熟食">
-    <view class="cates_container">
+    <view class="cates_container"  style="height:{{2*height}}rpx">
       <!-- 左侧菜单 -->
       <scroll-view scroll-y class="left_menu">
         <view 
@@ -22,23 +22,26 @@
         data-index="{{index}}">{{item}}</view>
       </scroll-view>
       <!-- 右侧内容 -->
-      <scroll-view scroll-top="{{scrollTop}}" scroll-y class="right_content">
-        <view class="goods_group">
+      <scroll-view scroll-top="{{scrollTop}}" scroll-with-animation scroll-y class="right_content" scroll-into-view="srcoll-{{right_index}}">
+        <view class="goods_group" wx:for="{{rightContent}}" wx:key="xiaolei_id" wx:for-item="item1">
           <!-- 一重循环放类名 -->
+          <view class="xiaolei_name" id="srcoll-{{index}}">{{item1.goods_name}}</view>
           <view class="goods_list">
-            <navigator class="navi"  wx:for="{{rightContent}}" wx:key="id" url="/pages/goods_detail/goods_detail?page={{item.id}}">
-              <image mode="widthFix" src="{{item.goods_url}}"/>
+            <navigator class="navi" wx:for="{{item1.children}}" wx:key="goods_id" wx:for-item="item2" url="/pages/goods_detail/goods_detail?page={{item2.goods_id}}">
+              <view class="image">
+                <image mode="widthFix" src="{{item2.goods_url}}"/>
+              </view>
               <view class="goods_content">
-                <view class="goods_name">{{item.goods_name}}</view>
-                <view class="goods_detail">{{item.goods_detail}}</view>
+                <view class="goods_name">{{item2.goods_name}}</view>
+                <view class="goods_detail">{{item2.goods_detail}}</view>
                 <view class="price_wrap">
-                  <view class="goods_price">{{item.goods_price}}元</view>
+                  <view class="goods_price">{{item2.goods_price}}元</view>
                   <view class="num_wrap">
-                    <block wx:if="{{item.num}}">
-                      <view class="num_edit" catchtap="handleNumEdit" data-operation="{{-1}}" data-id="{{item.id}}">-</view>
-                      <view class="goods_num">{{item.num}}</view>
+                    <block wx:if="{{item2.num}}">
+                      <view class="num_edit" catchtap="handleNumEdit" data-operation="{{-1}}" data-id="{{item2.goods_id}}">-</view>
+                      <view class="goods_num">{{item2.num}}</view>
                     </block>
-                    <view class="num_edit" catchtap="handleNumEdit" data-operation="{{1}}" data-id="{{item.id}}">+</view>
+                    <view class="num_edit" catchtap="handleNumEdit" data-operation="{{1}}" data-id="{{item2.goods_id}}">+</view>
                   </view>
                 </view>
               </view>
@@ -48,13 +51,51 @@
       </scroll-view>
     </view>
   </van-tab>
-  <van-tab title="生食"></van-tab>
+  <van-tab title="生食">
+    <view class="cates_container"  style="height:{{2*height}}rpx">
+      <!-- 左侧菜单 -->
+      <scroll-view scroll-y class="left_menu">
+        <view 
+        class="menu_item {{index===currentIndex?'active':''}}"
+        wx:for="{{leftMenuList}}"
+        wx:key="*this"
+        bindtap="handleItemTap"
+        data-index="{{index}}">{{item}}</view>
+      </scroll-view>
+      <!-- 右侧内容 -->
+      <scroll-view scroll-top="{{scrollTop}}" scroll-with-animation scroll-y class="right_content" scroll-into-view="srcoll-{{right_index}}">
+        <view class="goods_group" wx:for="{{rightContent}}" wx:key="xiaolei_id" wx:for-item="item1">
+          <!-- 一重循环放类名 -->
+          <view class="xiaolei_name" id="srcoll-{{index}}">{{item1.goods_name}}</view>
+          <view class="goods_list">
+            <navigator class="navi" wx:for="{{item1.children}}" wx:key="goods_id" wx:for-item="item2" url="/pages/goods_detail/goods_detail?page={{item2.goods_id}}">
+              <view class="image">
+                <image mode="widthFix" src="{{item2.goods_url}}"/>
+              </view>
+              <view class="goods_content">
+                <view class="goods_name">{{item2.goods_name}}</view>
+                <view class="goods_detail">{{item2.goods_detail}}</view>
+                <view class="price_wrap">
+                  <view class="goods_price">{{item2.goods_price}}元</view>
+                  <view class="num_wrap">
+                    <block wx:if="{{item2.num}}">
+                      <view class="num_edit" catchtap="handleNumEdit" data-operation="{{-1}}" data-id="{{item2.goods_id}}">-</view>
+                      <view class="goods_num">{{item2.num}}</view>
+                    </block>
+                    <view class="num_edit" catchtap="handleNumEdit" data-operation="{{1}}" data-id="{{item2.goods_id}}">+</view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
   <van-tab title="零食"></van-tab>
   <van-tab title="饮品"></van-tab>
   <van-tab title="用品"></van-tab>
-
 </van-tabs>
-
 
 
 

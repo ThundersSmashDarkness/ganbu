@@ -8,18 +8,26 @@ Page({
    */
   data: {
    allReadySendHouse:80,
-   specialHouse:2,
+   specialHouse:58,
    allReadyConfirm:68,
-   dangerousHouse:12,
+   dangerousHouse:77,
    number:[
-{id:"0",house_id:"a1",exceptional_case:true,isDangerHouse:true,isconfirmed:true},
-{id:"1",house_id:"b1",exceptional_case:false,isDangerHouse:false,isconfirmed:true},
-{id:"2",house_id:"c1",exceptional_case:false,isDangerHouse:true,isconfirmed:false},
-{id:"3",house_id:"a2",exceptional_case:true,isDangerHouse:false,isconfirmed:false},
-{id:"4",house_id:"a8",exceptional_case:true,isDangerHouse:false,isconfirmed:true},
-{id:"5",house_id:"d1",exceptional_case:true,isDangerHouse:true,isconfirmed:true},
-{id:"6",house_id:"d4",exceptional_case:false,isDangerHouse:false,isconfirmed:true}
+{id:"0",house_id:"张三",},
+{id:"1",house_id:"李四",},
+{id:"2",house_id:"赵五",},
+{id:"3",house_id:"刘六",},
+{id:"4",house_id:"陈七",},
+{id:"5",house_id:"周八",},
+{id:"6",house_id:"姜九",}
    ]
+  },
+
+  ToGAM:function(){
+
+ wx.navigateTo({
+   url: '../GAM/GAM',
+ })
+
   },
 
 
@@ -52,7 +60,7 @@ Page({
         break;
       case 'right':
         Dialog.confirm({
-          message: '确定打回吗？',
+          message: '确定拒绝吗？',
         }).then(() => {
           instance.close();
           var SBS = wx.getStorageSync('fangzaishangbaoshu');

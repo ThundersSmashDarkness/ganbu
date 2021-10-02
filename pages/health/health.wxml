@@ -1,2 +1,91 @@
-<!--pages/health/health.wxml-->
-<text>pages/health/health.wxml</text>
+<view class="container">
+	<view class="title">
+		<view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
+		{{chartTitle}}
+	</view>
+    <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <view class="bottom_text" >注：点击数据每一项查看详情</view>
+</view>
+
+
+
+
+
+
+
+
+
+<view class="elder_title">
+按年龄段倒序显示：
+</view>
+
+
+<view class="elder_wrap">
+<view class="card_top">
+<view class="card_text">85岁及以上</view>
+<view class="card_more"> 
+ 
+ <image bindtap="upper85detail" class="arrow" src="../../icon/gengduo.png"></image> 
+</view>
+
+</view>
+<view class="navi_content">
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=https://img0.baidu.com/it/u=2148829992,2338936399&fm=26&fmt=auto"></image>
+</navigator>
+
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=https://img0.baidu.com/it/u=2148829992,2338936399&fm=26&fmt=auto"></image>
+</navigator>
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=https://img0.baidu.com/it/u=2148829992,2338936399&fm=26&fmt=auto"></image>
+</navigator>
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=https://img0.baidu.com/it/u=2148829992,2338936399&fm=26&fmt=auto"></image>
+</navigator>
+
+</view>
+
+<view class="name_wrap">
+  <view class="elder_name">王爷爷</view>
+  <view class="elder_name">李爷爷</view>
+  <view class="elder_name">张爷爷</view>
+  <view class="elder_name">孙爷爷</view>
+</view>
+</view>
+
+
+
+<view class="elder_wrap">
+<view class="card_top">
+<view class="card_text">76岁-85岁</view>
+<view class="card_more"> 
+ 
+ <image bindtap="upper85detail" class="arrow" src="../../icon/gengduo.png"></image> 
+</view>
+
+</view>
+<view class="navi_content">
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=http://47.97.152.69:8080/upload/files/elderman3.jpg"></image>
+</navigator>
+
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=http://47.97.152.69:8080/upload/files/elderwoman2.jpg"></image>
+</navigator>
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=https://img0.baidu.com/it/u=2148829992,2338936399&fm=26&fmt=auto"></image>
+</navigator>
+<navigator class="circle_wrap" url="85detail/85detail">
+  <image  class="image_wrap" src=https://img0.baidu.com/it/u=2148829992,2338936399&fm=26&fmt=auto"></image>
+</navigator>
+
+</view>
+
+<view class="name_wrap">
+  <view class="elder_name">王爷爷</view>
+  <view class="elder_name">李奶奶</view>
+  <view class="elder_name">张爷爷</view>
+  <view class="elder_name">孙爷爷</view>
+</view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/FZSBCL/ConirmedHouseDetail/ConirmedHouseDetail.wxml-->
+<view  class="top_text">
+  已上报家庭:446户
+</view>
+
+
+<view class="top_text">
+  未上报家庭:112户
+</view>
+
+
+
+
+
+
+<view class="divider">未上报家庭信息：</view>
+
+<van-cell-group>
+  <van-cell  wx:for="{{weishangbao}}"    key="id" title="家庭id：{{item.house_id}}家庭" value="未上报" label="所属网格长：{{item.grid}}" border="{{ false }}" />
+</van-cell-group>

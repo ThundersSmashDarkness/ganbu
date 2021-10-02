@@ -1,0 +1,14 @@
+/* pages/FZSBCL/ConirmedHouseDetail/ConirmedHouseDetail.wxss */
+
+.top_text{
+  margin: 20rpx;
+  text-align: center;
+
+}
+
+.divider{
+
+  margin-left: 0rpx;
+  margin: 20rpx;
+ color:rgb(165, 165, 165)
+}

@@ -6,5 +6,6 @@
     "van-stepper": "@vant/weapp/stepper/index",
     "van-divider": "@vant/weapp/divider/index",
     "van-card": "@vant/weapp/card/index"
-  }
+  },
+  "navigationBarTitleText": "物资管理页面"
 }

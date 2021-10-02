@@ -1,0 +1,18 @@
+
+
+<view wx:for="{{elderif}}" key="id">
+<van-divider wx:if="{{item.divider}}" contentPosition="left">{{item.dividertitle}}岁</van-divider>
+<view class="if_wrap">
+<view class="haha">
+<navigator class="circle_wrap" url="../85detail/85detail">
+  <image  class="image_wrap" src=https://img0.baidu.com/it/u=2148829992,2338936399&fm=26&fmt=auto"></image>
+</navigator>
+</view>
+ <view  class="text_wrap">
+   <view>姓名：{{item.name}}</view>
+   <view>是否独居：{{item.alone}}</view>
+   <view>本人联系方式：{{item.contact}}</view>
+   <view>紧急联系人：{{item.urgent}}</view>
+ </view>
+ </view>
+</view>

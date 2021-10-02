@@ -1,0 +1,69 @@
+
+
+<view class="top_content" bindtap="ToGAM">
+
+
+<view class="top_text">物资面板</view>
+
+<view class="top_circle_wrap" bindtap="ToConirmedHouseDetail">
+<van-circle class="top_circle" value="{{ allReadySendHouse }}" stroke-width="6" text="食品" size="150" stroke-width="16" color="#0ac496" layer-color="rgba(238, 238, 238, 0.5)"/>
+<text>1098/1558</text>
+</view>
+
+<view class="top_circle_wrap">
+<van-circle class="top_circle" value="{{ specialHouse }}" stroke-width="6" text="饮品" size="150" stroke-width="16" color="#3f7ffc" layer-color="rgba(238, 238, 238, 0.5)"/>
+<text>607/1008</text>
+</view>
+
+
+<view class="top_circle_wrap">
+<van-circle class="top_circle" value="{{ allReadyConfirm }}" stroke-width="6" text="药品" size="150" stroke-width="16" color="#FAEBD7" layer-color="rgba(238, 238, 238, 0.5)"/>
+<text>1580/2021</text>
+</view>
+
+<view class="top_circle_wrap">
+<van-circle class="top_circle" value="{{ dangerousHouse }}" stroke-width="6" text="日用品" size="150" stroke-width="16" color="#7FFFD4" layer-color="rgba(238, 238, 238, 0.5)"/>
+<text>235/328</text>
+</view>
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<van-divider contentPosition="center">申请情况</van-divider>
+
+<van-swipe-cell
+id="swipe-cell"
+wx:for="{{number}}"
+wx:key="id"
+right-width="{{ 65 }}"
+left-width="{{ 65 }}"
+speed="10000"
+async-close
+bind:close="onClose"
+class="singleCELL"
+>
+<view slot="left" >同意</view>
+
+<van-cell-group >
+  <van-cell value="点击查看详情"  is-link >
+<view slot="title">
+  <view class="van-cell-text">{{item.house_id}}的物资申请表</view>
+
+</view>
+</van-cell>
+</van-cell-group>
+<view slot="right">拒绝</view>
+
+</van-swipe-cell>
+<van-dialog id="van-dialog" />

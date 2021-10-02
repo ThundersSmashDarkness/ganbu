@@ -1,11 +1,39 @@
+
+<view class="note">
+注意：如需删除已发布通知，请到首页选择相关通知，并滑动进行删除操作。
+</view>
+
 <view class="container">
   <view class="page-body">
-    <form catchsubmit="formSubmit" catchreset="formReset">
-    
+    <form catchsubmit="formSubmit" catchreset="formReset" >
+
+<view class="infomation">
+      <view class="wrap">
+      <view class="text">发布机构</view>
       <input class="notice_input" name="agency" placeholder="发布机构" />
+    </view>
+
+      <view class="wrap">
+      <view class="text">标题</view>
       <input class="notice_input" name="title" placeholder="标题" />
+    </view>
+
+      <view class="wrap">
+      <view class="text">通知类型</view>
       <input class="notice_input" name="type" placeholder="通知类型" />
-      <input class="notice_input" name="content" placeholder="通知内容" />
+    </view>
+
+
+
+
+    <view class="text">通知内容</view>
+      <view class="text_tishi">可使用下方语音输入按钮快速输入</view>
+    <textarea class="text_area" value="{{notice_content}}" name="content"
+      maxlength="-1"></textarea>
+      <van-button bindtap="voice_on">语音输入开始</van-button>
+      <van-button bindtap="voice_on">语音输入结束</van-button>
+
+  </view>
 
       <view class="btn-area">
         <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>

@@ -1,4 +1,5 @@
 // pages/shop/shop.js
+let shop_data = require('shop_data');
 Page({
   data:{
     // text:"这是一个页面"
@@ -15,12 +16,9 @@ Page({
     active: 0,
     scrollTop:0,
     currentIndex: 0,
-    leftMenuList:['饭类','面类','肉类','菜类'],
-    rightContent:[
-      {id:1, goods_url:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdealer0.autoimg.cn%2Fdl%2F122602%2Fnewsimg%2F130512469295591733.jpg&refer=http%3A%2F%2Fdealer0.autoimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632643953&t=2fe554793f120713303cfe5f685ec244",goods_name:"鸡腿", goods_price:5, goods_detail:'这是一个鸡腿，它是怎么怎么怎么做的饿，非常好吃哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈', num:0},
-      {id:2, goods_url:"https://img1.baidu.com/it/u=2201661351,1806193528&fm=26&fmt=auto&gp=0.jpg",goods_name:"烤全鸡", goods_price:35, goods_detail:'这是一只烤全鸡，它是怎么怎么怎么做的饿，非常好吃哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈', num:0},
-      {id:3, goods_url:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170430%2F51ad7cf754794174a0825437a92f50b1_th.jpeg&refer=http%3A%2F%2Fimg.mp.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632994493&t=b63962784517ee50c3be623d2201e217", goods_name:"炒饭", goods_price:13, goods_detail:'这是炒饭，它是怎么怎么怎么做的饿，非常好吃哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈', num:0}
-    ],
+    right_index:0,
+    leftMenuList:[],
+    rightContent:[],
     bgc: 'gray',
     order:{
       goods:[],
@@ -156,34 +154,52 @@ Page({
 
   ,
 
+  daleiChange(e){
+    const index = e.detail.index;
+    let leftMenuList = shop_data[index].children.map(v=>v.goods_name);
+    let rightContent = shop_data[index].children;
+    this.setData({
+      leftMenuList,
+      rightContent,
+      currentIndex: 0, 
+      scrollTop: 0
+    })
+    this.updata();
+  },
   handleItemTap(e){
     const {index}= e.currentTarget.dataset;
     console.log(e);
     this.setData({
-      currentIndex:index,
-      // 重新选择分类时 右侧滚动条在最顶端
-      scrollTop: 0
+      currentIndex: index,
+      right_index: index,
     })
   },
   handleNumEdit(e){
     const {id,operation} = e.currentTarget.dataset;
     let {rightContent,bgc,order} = this.data;
-    const index1 = rightContent.findIndex(v=>v.id==id);
-    rightContent[index1].num += operation;
-    order.totalPrice += rightContent[index1].goods_price * operation;
-    order.totalNum += operation;
+    let goods = order.goods;
+    let index = 0;
+    let index2 = 0; 
+    for(let i = 0 ; i < rightContent.length ; i++){
+      index = rightContent[i].children.findIndex(v=>v.goods_id == id)
+      if(index != -1){
+        rightContent[i].children[index].num += operation;
+        order.totalPrice += rightContent[i].children[index].goods_price * operation;
+        order.totalNum += operation;
+        // 更新订单
+        index2 = goods.findIndex(v => v.goods_id == rightContent[i].children[index].goods_id)
+        if(index2 == -1){
+          goods.push(rightContent[i].children[index])
+        }else{
+          goods[index2].num = rightContent[i].children[index].num
+        }
+        break;
+      } 
+    }
     if(order.totalNum == 0){
       bgc = 'gray'
     }else{
       bgc = 'var(--themeColor2)'
-    }
-    // 更新订单
-    let goods = order.goods;
-    let index2 = goods.findIndex(v=>v.id ==  rightContent[index1].id)
-    if(index2 == -1){
-      goods.push(rightContent[index1])
-    }else{
-      goods[index2].num = rightContent[index1].num
     }
     this.setData({
       order,
@@ -192,10 +208,64 @@ Page({
     })
     wx.setStorageSync('order', order)
   },
-  onLoad: function (options) {
-    // 获取商品数据并把商品信息存到缓存中（未实现）  方便查看商品详细时使用
-    // 暂时先用这个代替
-    const {rightContent} = this.data;
-    wx.setStorageSync('rightContent', rightContent);
+  onShow(){
+    this.updata();
   },
+  // 判断order
+  judge(order){
+    for(let i in order){
+      return true
+    }
+    return false
+  },
+  onLoad(options) {
+    //获取手机高度，以此来适应各种手机
+    let screenHeight = wx.getSystemInfoSync().windowHeight;
+    let {leftMenuList,rightContent} = this.data;
+    leftMenuList = shop_data[0].children.map(v=>v.goods_name);
+    rightContent = shop_data[0].children;
+    this.setData({
+      leftMenuList,
+      rightContent,
+      height: screenHeight - 120,
+    })
+  },
+  // 更新数据
+  updata(){
+    let order = wx.getStorageSync('order') || {};
+    const {rightContent} = this.data;
+    const flag = this.judge(order);
+    if(!flag){
+      rightContent.forEach(v=>{
+        v.children.forEach(w=>{
+          w.num = 0
+        })
+      })
+      order={
+        goods:[],
+        totalPrice: 0,
+        totalNum: 0,
+        date: ''
+      }
+    }else{
+      order.goods.forEach(v=>{
+        rightContent.forEach(w=>{
+          w.children.forEach(k=>{
+            if(v.goods_name == k.goods_name){
+              k.num = v.num
+            }
+          })
+        })
+      })
+    }
+    let bgc = "gray";
+    if(order.totalNum > 0 ){
+      bgc = "var(--themeColor2)"
+    }
+    this.setData({
+      rightContent,
+      bgc,
+      order
+    })
+  }
 })

@@ -1,20 +1,14 @@
-// pages/goods_detail/goods_detail.js
+let shop_data = require('../shop/shop_data.js')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    goods:'',
+    goods:{},
     bgc: '',
-    order:{}
-  },
-
-  judge(order){
-    for(let i in order){
-      return true
+    order:{
+      goods:[],
+      totalPrice: 0,
+      totalNum: 0,
+      date: ''
     }
-    return false
   },
   handleNumEdit(e){
     const {operation} = e.currentTarget.dataset;
@@ -23,11 +17,17 @@ Page({
     order.totalNum += operation;
     order.totalPrice += goods.goods_price * operation;
     // 更新订单
-    order.goods.forEach(v=>{
-      if(v.id == goods.id){
-        v.num = goods.num
-      }
-    })
+    const index = order.goods.findIndex(v => v.goods_id == goods.goods_id)
+    if(index == -1){
+      order.goods.push(goods)
+    }else{
+      order.goods[index].num = goods.num
+    }
+    // order.goods.forEach(v=>{
+    //   if(v.id == goods.id){
+    //     v.num = goods.num
+    //   }
+    // })
     if(order.totalNum == 0){
       bgc = 'gray'
     }else{
@@ -39,86 +39,53 @@ Page({
     })
     wx.setStorageSync('order', order)
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    const order = wx.getStorageSync('order') || {};
-    const rightContent = wx.getStorageSync('rightContent');
-    let goods = '';
-    const flag = this.judge(order)
-    if(!flag){
-      rightContent.forEach(v=>{
-        if(v.id == options.page){
-          goods = v;
-        }
-      })
-      console.log(11111);
-    }else{
+  handlePay(){
+    const {order} = this.data;
+    let final_order = [];
+    if(order.totalNum > 0){
       order.goods.forEach(v=>{
-        if(v.id == options.page){
-          goods = v;
+        if(v.num > 0){
+          final_order.push(v);
         }
       })
-      console.log(222222);
+      order.goods = final_order;
+      wx.setStorageSync('order', order)
+      wx.navigateTo({
+        url: '/pages/order/order',
+      })
     }
+    else{
+      wx.showModal({
+        title: '提示',
+        content: '请先选择商品',
+        showCancel: false
+      })
+    }
+  },
+  onLoad(options){
+    const order = wx.getStorageSync('order');
+    let goods = '';
+    shop_data.forEach(v=>{
+      v.children.forEach(w=>{
+        w.children.forEach(k=>{
+          if(k.goods_id == options.page){
+            goods = k
+          }
+        })
+      })
+    })
     let bgc = "gray";
     if(order.totalNum > 0 ){
       bgc = "var(--themeColor2)"
     }
     this.setData({
       goods,
-      order,bgc
+      bgc
     })
+    if(order){
+      this.setData({
+        order
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

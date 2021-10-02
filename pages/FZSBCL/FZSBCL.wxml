@@ -5,21 +5,27 @@
 
   <view class="top_text">数据汇总面板</view>
 
-<view class="top_circle_wrap">
-  <van-circle class="top_circle" value="{{ allReadySendHouse }}" stroke-width="6" text="已上报家庭" size="150" stroke-width="14" color="#007a67"/>
+<view class="top_circle_wrap" bindtap="ToConirmedHouseDetail">
+  <van-circle class="top_circle" value="{{ allReadySendHouse }}" stroke-width="6" text="已上报家庭" size="150" stroke-width="16" color="#007a67" layer-color="rgba(238, 238, 238, 0.5)"/>
+  <text>446/558</text>
 </view>
 
 <view class="top_circle_wrap">
-  <van-circle class="top_circle" value="{{ specialHouse }}" stroke-width="6" text="特殊情况" size="150" stroke-width="14" color="#f78f1e"/>
+  <van-circle class="top_circle" value="{{ specialHouse }}" stroke-width="6" text="特殊情况" size="150" stroke-width="16" color="#f78f1e" layer-color="rgba(238, 238, 238, 0.5)"/>
+  <text>11/558</text>
+</view>
+
+
+<view class="top_circle_wrap">
+  <van-circle class="top_circle" value="{{ allReadyConfirm }}" stroke-width="6" text="已确认家庭" size="150" stroke-width="16" color="#009979" layer-color="rgba(238, 238, 238, 0.5)"/>
+  <text>379/558</text>
 </view>
 
 <view class="top_circle_wrap">
-  <van-circle class="top_circle" value="{{ allReadyConfirm }}" stroke-width="6" text="已确认家庭" size="150" stroke-width="14" color="#009979"/>
+  <van-circle class="top_circle" value="{{ dangerousHouse }}" stroke-width="6" text="危房" size="150" stroke-width="16" color="#ffc808" layer-color="rgba(238, 238, 238, 0.5)"/>
+  <text>67/558</text>
 </view>
 
-<view class="top_circle_wrap">
-  <van-circle class="top_circle" value="{{ dangerousHouse }}" stroke-width="6" text="危房" size="150" stroke-width="14" color="#ffc808"/>
-</view>
 
 
 </view>
@@ -46,6 +52,7 @@
   async-close
   bind:close="onClose"
   class="singleCELL"
+  url="/pages/GAM/GAM"
 >
   <view slot="left" >确认</view>
   

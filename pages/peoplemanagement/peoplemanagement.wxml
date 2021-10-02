@@ -1,0 +1,12 @@
+<!--pages/peoplemanagement/peoplemanagement.wxml-->
+<view class="total_wrap">
+<view class="choose_card"  bindtap="housemanagement">
+<text>村庄家庭管理</text>
+</view>
+
+
+<view class="choose_card" bindtap="gridmanagement">
+<text>网格员管理</text>
+</view>
+
+</view>

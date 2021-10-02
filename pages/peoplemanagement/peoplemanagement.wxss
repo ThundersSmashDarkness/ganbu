@@ -1,0 +1,29 @@
+/* pages/peoplemanagement/peoplemanagement.wxss */
+
+.choose_card{
+  
+   background-color: var(--themeColor1);
+   height: 300rpx;
+   border-radius: 88rpx;
+   width: 688rpx;
+   display:flex;
+align-items:center;
+justify-content:center;
+margin: 20rpx;
+margin-top: 88rpx;
+
+}
+
+.choose_card text{
+
+  font-size:xx-large;
+  color: white;
+
+}
+
+.total_wrap{
+position: relative;
+   
+   top:100rpx;
+  
+}

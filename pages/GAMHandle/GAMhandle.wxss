@@ -1,0 +1,83 @@
+/* pages/FZSBCL/FZSBCL.wxss */
+page{
+
+  background-color: rgba(238, 238, 238, 0.884);
+  
+  }
+  .top_text{
+    text-align: center;
+     margin: 10rpx;
+  width: 100%;
+  }
+  .top_content{
+    background-color: white;
+    display: flex;
+    display: -webkit-flex;
+              justify-content: space-between;
+              flex-direction: row;
+              flex-wrap: wrap;
+   border-radius: 50rpx;
+   margin: 30rpx;
+  }
+  
+  .top_circle_wrap{
+       border-color: black;
+       flex:4;
+       margin: 18rpx;
+  }
+  
+  .singleCELL{
+  
+    margin:0rpx;
+  
+  }
+  
+  .van-swipe-cell__left{
+    width: 120rpx;
+    height: 100%;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    background-color:rgb(8, 189, 53);
+    word-wrap: break-word;
+    padding: 0 22rpx;
+    box-sizing: border-box;
+    /*文本垂直居中*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .van-swipe-cell__right {
+    width: 130rpx;
+    height: 100%;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #f44;
+    word-wrap: break-word;
+    padding: 0 22rpx;
+    box-sizing: border-box;
+    /*文本垂直居中*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .top_circle_wrap text{
+  
+    display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  }
+   
+   .elder_name{
+   
+   flex:4;
+   margin-left: 48rpx;
+   margin-bottom: 20rpx;
+   margin-top: -5rpx;
+   font-size: 22rpx;
+   }
+  

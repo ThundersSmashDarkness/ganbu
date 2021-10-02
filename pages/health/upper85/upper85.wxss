@@ -1,0 +1,55 @@
+/* pages/health/upper85/upper85.wxss */
+
+page{
+
+background-color: whitesmoke;
+
+}
+
+.if_wrap{
+  background-color:white;
+  border-radius: 100rpx;
+  height: 188rpx;
+  margin: 10rpx;
+  display: flex;
+  flex-direction: row;
+  box-shadow:2px 2px 5px #000;
+}
+.elder_wrap{
+  background-color: white;
+ border-radius: 58rpx;
+ margin: 10rpx;
+}
+
+.image_wrap{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100rpx;
+  background-color:cornsilk;
+  border-color:var(--themeColor1);
+  border-style:solid;
+ border-width: 13rpx;
+}
+.circle_wrap{
+
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100rpx;
+  margin: 15rpx;
+}
+.text_wrap{
+
+   flex:6;
+   margin-top: 10rpx;
+}
+.text_wrap view{
+
+  font-size: smaller;
+
+}
+.haha{
+
+  flex:2;
+
+}
+

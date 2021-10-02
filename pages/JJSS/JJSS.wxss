@@ -119,6 +119,7 @@ view {
   align-items: center;
   justify-content: center;
   width: 200rpx;
+  height: 108rpx;
   padding: 15rpx 0rpx;
   border-radius: 50rpx;
   margin: 0rpx 10rpx 30rpx 24rpx;

@@ -13,7 +13,8 @@ Page({
     agency:'',
     content:'',
     title:'',
-    type:''
+    type:'',
+    notice_content:''
   },
 
   uploadimg: function() {
@@ -43,6 +44,14 @@ Page({
         })
       }
     })
+  },
+
+  voice_on:function(){
+
+    this.setData({
+    notice_content:"hahahahahahaha"
+    })
+
   },
 
   pickerConfirm(e) {

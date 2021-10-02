@@ -77,6 +77,54 @@
           "pathName": "pages/notice/notice",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/GAMHandle/GAMhandle",
+          "pathName": "pages/GAMHandle/GAMhandle",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/health/health",
+          "pathName": "pages/health/health",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/health/85detail/85detail",
+          "pathName": "pages/health/85detail/85detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/health/upper85/upper85",
+          "pathName": "pages/health/upper85/upper85",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/peoplemanagement/peoplemanagement",
+          "pathName": "pages/peoplemanagement/peoplemanagement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/FZSBCL/ConirmedHouseDetail/ConirmedHouseDetail",
+          "pathName": "pages/FZSBCL/ConirmedHouseDetail/ConirmedHouseDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/GAMHandle/GAMhandle",
+          "pathName": "pages/GAMHandle/GAMhandle",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/health/upper85/upper85",
+          "pathName": "pages/health/upper85/upper85",
+          "query": "",
+          "scene": null
         }
       ]
     }
