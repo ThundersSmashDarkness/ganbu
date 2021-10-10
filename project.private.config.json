@@ -125,6 +125,18 @@
           "pathName": "pages/health/upper85/upper85",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/index/noticeDetail/noticeDetail",
+          "pathName": "pages/index/noticeDetail/noticeDetail",
+          "query": "page=1",
+          "scene": null
+        },
+        {
+          "name": "pages/gridmanagement/gridmanagement",
+          "pathName": "pages/gridmanagement/gridmanagement",
+          "query": "",
+          "scene": null
         }
       ]
     }

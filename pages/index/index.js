@@ -1,10 +1,12 @@
 // index.js
 // 获取应用实例
-
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
+import {request} from '../../utils/request.js'
 const app = getApp()
 const recorderManager = wx.getRecorderManager();
 Page({
   data: {
+    notice_info:[],
     SESSION:'',
     motto: 'Hello World',
     userInfo: {},
@@ -23,10 +25,9 @@ Page({
       {id:"5"},
       {id:"5"}
 
-
-
     ],
     fangzaishangbaoshu:0,
+     wuzishenqingshu:0,
   },
   bindtest:function () {
 
@@ -161,18 +162,61 @@ villageinfo: function (){
 onPullDownRefresh: function () {
  //上报处理数量
  wx.setStorageSync('fangzaishangbaoshu', 10)
-
+ wx.setStorageSync('wuzishenqingshu', 8)
  const SBS = wx.getStorageSync('fangzaishangbaoshu')
-
+ const WZSQS = wx.getStorageSync
+ ('wuzishenqingshu')
   this.setData({
 
-  fangzaishangbaoshu:SBS
-
+  fangzaishangbaoshu:SBS,
+   wuzishenqingshu:WZSQS
   })
+
+  
+
+  request({
+    url: '/notice/allInfo',
+    data: {"order":"date","desc":true},
+    header: {'content-type':
+    'application/json' },
+    method: 'POST',
+    success: (result) => {},
+    fail: (res) => {},
+    complete: (res) => {},
+  }).then(result=>{
+  console.log(result.data)
+      this.setData({
+   notice_info:result.data
+      })
+      wx.setStorageSync('notice_data', result.data)
+  })
+
+
+
 
 },
 
 onLoad: function (options) {
+
+  request({
+    url: '/notice/allInfo',
+    data: {"order":"date","desc":true},
+    header: {'content-type':
+    'application/json' },
+    method: 'POST',
+    success: (result) => {},
+    fail: (res) => {},
+    complete: (res) => {},
+  }).then(result=>{
+  console.log(result.data)
+      this.setData({
+   notice_info:result.data
+      })
+      wx.setStorageSync('notice_data',result.data)
+
+  })
+
+
 
 
   
@@ -201,14 +245,36 @@ onLoad: function (options) {
 onShow: function () {
 
   const SBS = wx.getStorageSync('fangzaishangbaoshu')
-
+  const WZSQS = wx.getStorageSync
+ ('wuzishenqingshu')
   this.setData({
 
-  fangzaishangbaoshu:SBS
-
+  fangzaishangbaoshu:SBS,
+  wuzishenqingshu:WZSQS
   })
 
 },
-
+onClose(event) {
+  const { position, instance } = event.detail;
+  switch (position) {
+    case 'left':
+      Dialog.confirm({
+        message: '再次确认',
+      }).then(() => {
+        instance.close();
+      });
+      break;
+    case 'cell':
+      instance.close();
+      break;
+    case 'right':
+      Dialog.confirm({
+        message: '确定打回吗？',
+      }).then(() => {
+        instance.close();
+      });
+      break;
+  }
+},
 
 })

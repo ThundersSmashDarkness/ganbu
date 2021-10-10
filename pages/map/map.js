@@ -1,4 +1,6 @@
 let falseData = require('falseData')
+
+
 Page({
 
   /**
@@ -10,65 +12,106 @@ Page({
     enableScroll: true,
     enableRotate: true,
     enableSatellite: false,
-    latitude: "30.313368492093822",
-    longitude: "120.35572518322752",//这个是你的经纬度
-    markers:[{
-      "name": "火灾避难区",
-      "lon": 120.379275,
-      "id": 900000003,
-      "lat": 30.3199905,
-      "duoyu":"杭州市环境集团",
-      "iconPath":"../../icon/zaihai/fire.png",
-      "width":"50",
-      "height":"50"
-    },
-    {
-      "name": "洪灾避难区",
-      "lon": 120.34020055744932,
-      "id": 900000004,
-      "lat": 30.317110254954528,
-      "duoyu": "杭电宿舍体育馆",
-      "iconPath":"../../icon/zaihai/water.png",
-      "width":"50",
-      "height":"50"
-    },
-    {
-      "name": "地质灾害避难区",
-      "lon": 120.3506075284271,
-      "id": 900000005,
-      "lat": 30.304041248446378,
-      "duoyu": "浙江育英职业技术学院左边操场",
-      "iconPath":"../../icon/zaihai/ground.png",
-      "width":"80",
-      "height":"80"
-    
-    }],
-    polygons: [{
-      points: [{//这里的数组是你规定的多边形区域，
-      //同上所述 你要在map上找到你所要的坐标 进行划分值
-        longitude: 120.36849,
-        latitude: 30.317669
-      }, {
-        longitude: 120.38849,
-        latitude: 30.317669
-      }, {
-        longitude: 120.38849,
-        latitude: 30.327669
+    latitude: "30.375415",
+    longitude: "120.356703",//这个是你的经纬度
+    markers:[
+      {
+        "name": "火灾避难区",
+        "lon":120.35683650067137,
+        "id": 900000003,
+        "lat":30.36553600969695,
+        "duoyu":"杭铣新村东侧",
+        "iconPath":"../../icon/zaihai/fire.png",
+        "width":"50",
+        "height":"50"
       },
       {
-        longitude: 120.36849,
-        latitude: 30.327669
+        "name": "洪灾避难区",
+        "lon": 120.35319854233549,
+        "id": 900000004,
+        "lat": 30.352389649058564,
+        "duoyu": "浙江星野集团第一分公司北侧",
+        "iconPath":"../../icon/zaihai/water.png",
+        "width":"50",
+        "height":"50"
+      },
+      {
+        "name": "地质灾害避难区",
+        "lon": 120.34040172312544,
+        "id": 900000005,
+        "lat": 30.363449028354996,
+        "duoyu": "十五堡东侧",
+        "iconPath":"../../icon/zaihai/ground.png",
+        "width":"80",
+        "height":"80"
+      }
+  ],
+    polygons: [
+    {
+      points: [{
+        longitude: 120.36053650067137,
+        latitude: 30.36253600969695
       }, {
-        longitude: 120.35849,
-        latitude: 30.327669
+        longitude: 120.36853650067137,
+        latitude: 30.36753600969695
+      }, {
+        longitude: 120.36053650067137,
+        latitude: 30.37053600969695
+      },
+      {
+        longitude: 120.35053650067137,
+        latitude: 30.37053600969695
+      }, {
+        longitude: 120.35053650067137,
+        latitude: 30.36453600969695
       }],
-      fillColor: "#F2D7BC99",//设置透明度 后面加数字代表透明度
+      fillColor: "#F2D7BC99",
+      strokeColor: "#FFF",
+      strokeWidth: 2,
+      zIndex: 1
+    },
+    {
+      points: [{
+        longitude: 120.35719854233549,
+        latitude: 30.348389649058564
+      }, {
+        longitude: 120.35519854233549,
+        latitude: 30.358389649058564
+      }, {
+        longitude: 120.35019854233549,
+        latitude: 30.356389649058564
+      },
+      {
+        longitude: 120.34819854233549,
+        latitude: 30.348389649058564
+      }],
+      fillColor: "#00BFFF68",
+      strokeColor: "#FFF",
+      strokeWidth: 2,
+      zIndex: 1
+    },
+    {
+      points: [{
+        longitude: 120.34440172312544,
+        latitude: 30.362449028354996
+      }, {
+        longitude: 120.34440172312544,
+        latitude: 30.369449028354996
+      }, {
+        longitude: 120.33640172312544,
+        latitude: 30.369449028354996
+      },
+      {
+        longitude: 120.33640172312544,
+        latitude: 30.360449028354996
+      }],
+      fillColor: "#DAA52068",
       strokeColor: "#FFF",
       strokeWidth: 2,
       zIndex: 1
     }]
   },
-
+ 
   escape:function (){
 
     wx.navigateTo({
@@ -271,6 +314,8 @@ Page({
       type: 'gcj02',
       altitude: true, //高精度定位  定位成功，更新定位结果
       success: (res) => {
+
+        //使用假地址
         var latitude = res.latitude
         var longitude = res.longitude
         that.setData({

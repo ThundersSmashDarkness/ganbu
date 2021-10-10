@@ -67,8 +67,8 @@ flex:6
 
     background-color: white;
    border-radius: 58rpx;
-   margin: 10rpx;
-   box-shadow:2px 2px 5px rgb(126, 126, 126);
+   margin: 40rpx 10rpx 0rpx 10rpx;
+   box-shadow:2px 2px 5px rgba(165, 164, 164, 0.377);
 }
 
 .arrow{

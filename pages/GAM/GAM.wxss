@@ -1,5 +1,7 @@
 /* pages/GAM/GAM.wxss */
 
+
+
 .circle_wrap{
   margin: 20rpx;
    width: 100%;
@@ -40,4 +42,56 @@
 .circle{
 padding: 10rpx;
 
+}
+
+.GAM_bar{
+
+   margin-top: 30rpx;
+   display: flex;
+  
+}
+
+.left_bar{
+  background-color:#a4a5a725;
+    flex:4;
+    border-radius: 20rpx;
+    margin: 5rpx;
+}
+
+.right_bar{
+  
+   flex:4;
+
+}
+
+.right_son1{
+  
+  background-color:#a4a5a725;
+  border-radius: 15rpx;
+   height: 100rpx;
+   margin: 5rpx;
+   display: flex;
+   align-items: center;
+   box-shadow: rgba(198, 202, 198, 0.527);
+}
+
+.heiheihei{
+margin-left: 110rpx;
+   flex:2;
+ text-align:center;
+}
+
+.arrow{
+
+ 
+  height: 30rpx;
+  width: 30rpx;
+   margin-right: 90rpx;
+}
+
+
+.top_title{
+
+   text-align: center;
+   margin: 10rpx;
 }

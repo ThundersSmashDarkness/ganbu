@@ -1,37 +1,18 @@
-// pages/gridmanagement/gridmanagement.js
-import {request} from '../../utils/request.js'
-
+// pages/GAMHandle/GAMHandleDetail/GAMHandleDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-grid_info:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    request({
-      url: '/grid/allInfo',
-      data: {},
-      header: {'content-type':
-      'application/json' },
-      method: 'POST',
-      success: (result) => {},
-      fail: (res) => {},
-      complete: (res) => {},
-    }).then(result=>{
-    console.log(result.data)
-        this.setData({
-     grid_info:result.data.info
-        })
-        console.log(result.data.info)
-    })
-  
-  
+
   },
 
   /**

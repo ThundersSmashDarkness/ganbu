@@ -18,6 +18,22 @@ Page({
     });
   },
 
+  gotoaddGAM:function(){
+
+  wx.navigateTo({
+    url: '../GAM/GAMadd/GAMadd',
+  })
+
+  },
+
+  gotoGAMhistory:function(){
+
+    wx.navigateTo({
+      url: '../GAM/GAMhistory/GAMhistory',
+    })
+  
+    },
+
 
   onFoodChange(event) {
     this.setData({

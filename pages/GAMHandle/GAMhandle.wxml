@@ -66,4 +66,34 @@ class="singleCELL"
 <view slot="right">拒绝</view>
 
 </van-swipe-cell>
+
+
+
+
+
+<van-swipe-cell
+id="swipe-cell"
+right-width="{{ 65 }}"
+left-width="{{ 65 }}"
+speed="10000"
+async-close
+bind:close="onClose"
+class="singleCELL"
+>
+<view slot="left" >同意</view>
+
+<van-cell-group >
+  <van-cell value="点击查看详情"  is-link url="../GAMHandle/GAMHandleDetail/GAMHandleDetail">
+<view slot="title">
+  <view class="van-cell-text">{{show_id}}的物资申请表</view>
+
+</view>
+</van-cell>
+</van-cell-group>
+<view slot="right">拒绝</view>
+
+</van-swipe-cell>
+
+
+
 <van-dialog id="van-dialog" />

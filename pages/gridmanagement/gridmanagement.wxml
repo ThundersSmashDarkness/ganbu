@@ -1,2 +1,5 @@
-<!--pages/gridmanagement/gridmanagement.wxml-->
-<text>pages/gridmanagement/gridmanagement.wxml</text>
+<view class="wrap">
+<van-cell-group inset >
+  <van-cell title="{{item.officer_name}}" value="网格员ID:{{item.grid_id}}" label="负责区域： \n   北纬:{{item.latitude_north}} \n南纬:{{item.latitude_south}} \n东经:{{item.longitude_east}} \n西经:{{item.longiitude_west}}" wx:for="{{grid_info}}"/>
+</van-cell-group>
+</view>

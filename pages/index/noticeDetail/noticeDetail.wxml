@@ -1,0 +1,11 @@
+<view class="title_wrap">{{DATA.title}}</view>
+
+<view class="middle_wrap">{{DATA.date}}</view>
+
+<image mode="widthFix" src="{{DATA.image}}"> </image>
+
+<view class="content_wrap">
+<text >{{DATA.content}}</text>
+</view>
+
+<view>新闻后台id：{{DATA.id}}</view>

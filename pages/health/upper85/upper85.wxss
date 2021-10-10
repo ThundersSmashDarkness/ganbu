@@ -10,10 +10,10 @@ background-color: whitesmoke;
   background-color:white;
   border-radius: 100rpx;
   height: 188rpx;
-  margin: 10rpx;
+  margin: 20rpx 20rpx 0rpx 20rpx;
   display: flex;
   flex-direction: row;
-  box-shadow:2px 2px 5px #000;
+  box-shadow:2px 2px 5px rgba(165, 164, 164, 0.377);
 }
 .elder_wrap{
   background-color: white;

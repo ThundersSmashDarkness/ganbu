@@ -11,6 +11,7 @@ Page({
    specialHouse:58,
    allReadyConfirm:68,
    dangerousHouse:77,
+   show_id:"黄十",
    number:[
 {id:"0",house_id:"张三",},
 {id:"1",house_id:"李四",},
@@ -49,9 +50,9 @@ Page({
         }).then(() => {
           instance.close();
 
-          var SBS = wx.getStorageSync('fangzaishangbaoshu');
-          SBS=SBS-1;
-          wx.setStorageSync('fangzaishangbaoshu', SBS);
+          var WZSQS = wx.getStorageSync('wuzishenqingshu');
+          WZSQS=WZSQS-1;
+          wx.setStorageSync('wuzishenqingshu', WZSQS);
 
         });
         break;
@@ -63,9 +64,9 @@ Page({
           message: '确定拒绝吗？',
         }).then(() => {
           instance.close();
-          var SBS = wx.getStorageSync('fangzaishangbaoshu');
-          SBS=SBS-1;
-          wx.setStorageSync('fangzaishangbaoshu', SBS);
+          var WZSQS = wx.getStorageSync('wuzishenqingshu');
+          WZSQS=WZSQS-1;
+          wx.setStorageSync('wuzishenqingshu', WZSQS);
         });
         break;
     }

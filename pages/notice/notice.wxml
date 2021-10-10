@@ -30,14 +30,40 @@
       <view class="text_tishi">可使用下方语音输入按钮快速输入</view>
     <textarea class="text_area" value="{{notice_content}}" name="content"
       maxlength="-1"></textarea>
-      <van-button bindtap="voice_on">语音输入开始</van-button>
-      <van-button bindtap="voice_on">语音输入结束</van-button>
+      <van-button bind:click="startRecordMp3">语音输入开始</van-button>
+      <van-button bind:click="stopRecord">语音输入结束</van-button>
+      <van-button bind:click="translate">转文字</van-button>
+
 
   </view>
 
+ 
+
+<view class="wrap">
+<view class="img-wrap">
+  <view class="txt">上传图片</view>
+  <view class="imglist">
+    <view class="item" wx:for="{{imgs}}" wx:key="item">
+      <image src="{{item}}" alt=""></image>
+      <view class='delete' bindtap='deleteImg' data-index="{{index}}">
+        <image src="../../../images/icon.png"></image>
+      </view>
+    </view>
+    <view class="last-item" wx:if="{{imgs.length >= 3 ? false : true}}" bindtap="bindUpload">
+      <text class="sign">+</text>
+    </view>
+  </view>
+</view>
+</view>
+
+<van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
+<van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
+
+
+
       <view class="btn-area">
-        <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
-        <button style="margin: 30rpx 0" formType="reset">Reset</button>
+        <button style="margin: 30rpx 0" type="primary" formType="submit" >提交</button>
+        <button style="margin: 30rpx 0" formType="reset">重填</button>
       </view>
     </form>
   </view>
@@ -46,3 +72,5 @@
     <view class="van-hairline--surround"></view>
 
 </view>
+
+

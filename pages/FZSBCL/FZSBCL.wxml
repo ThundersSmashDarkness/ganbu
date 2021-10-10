@@ -52,12 +52,11 @@
   async-close
   bind:close="onClose"
   class="singleCELL"
-  url="/pages/GAM/GAM"
 >
   <view slot="left" >确认</view>
   
   <van-cell-group >
-    <van-cell value="点击查看详情" icon="home-o" is-link >
+    <van-cell value="点击查看详情" icon="home-o" is-link url="../FZSBCL/FZdetail/FZdetail?page={{item.id}}">
   <view slot="title">
     <view class="van-cell-text">{{item.house_id}}家庭防灾上报情况</view>
     <van-tag wx:if="{{item.exceptional_case}}"  type="danger" calss="biaoqian">特殊情况</van-tag>

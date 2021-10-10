@@ -1,0 +1,16 @@
+/* pages/index/noticeDetail/noticeDetail.wxss */
+.title_wrap{
+margin: 50rpx 30rpx 10rpx 30rpx;
+font-size: 58rpx;
+font-weight: 800;
+color: #333333;
+}
+.middle_wrap{
+  margin-left: 10rpx;
+  color: #999999;
+}
+.content_wrap{
+
+ margin-left:20rpx;
+ margin-right: 20rpx;
+}

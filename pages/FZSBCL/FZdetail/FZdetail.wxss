@@ -1,0 +1,55 @@
+.image_wrap{
+
+  width: 100%;
+ 
+}
+
+.biaoqian{
+
+  margin: 20rpx;
+  text-align:center;
+
+}
+.image_wrap image{
+
+    border-radius: 30rpx;
+    margin: 20rpx;
+  
+  }
+
+
+.biaoqian{
+   margin-top: 20rpx;
+  font-size:larger;
+  margin-left:10rpx;
+
+}
+
+
+.bottom_button_wrap{
+
+      text-align: center;
+      margin: 38rpx;
+} 
+
+.bottom_button{
+
+   margin: 78rpx;
+   width: 50%;
+}
+
+
+.wrap-bottom{
+  display: flex;
+  padding-bottom: 20rpx;
+}
+.text{
+  flex: 3;
+}
+
+.text_area{
+  border: 2rpx solid black;
+  padding: 20rpx;
+  margin: 28rpx;
+  left:28rpx;
+}

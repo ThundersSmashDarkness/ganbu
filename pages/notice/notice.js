@@ -1,3 +1,5 @@
+const recorderManager = wx.getRecorderManager();
+const app = getApp()
 Page({
   onShareAppMessage() {
     return {
@@ -7,6 +9,16 @@ Page({
   },
 
   data: {
+
+    // 图片
+    imgs: [],
+  count: 3,
+
+  //日期
+
+  date: '',
+  show: false,
+
     pickerHidden: true,
     chosen: '',
     showImage_url: '',
@@ -15,35 +27,6 @@ Page({
     title:'',
     type:'',
     notice_content:''
-  },
-
-  uploadimg: function() {
-    var that = this;
-    //选择图片
-    wx.chooseImage({
-      count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function(res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        var tempFilePaths = res.tempFilePaths[0]
-        that.setData({
-          showImage_url: tempFilePaths
-        })
-        //图片上传
-        wx.uploadFile({
-          url: 'http://localhost/common/uploadImg',//调用后台接口的路径
-          method:'POST',
-          filePath: that.data.showImage_url,
-          name: 'file',//此处注意要与后台保持一致
-          header: {
-            "Content-Type": false,
-          },
-          //formdata:adds,
-          success: function(res) {}
-        })
-      }
-    })
   },
 
   voice_on:function(){
@@ -121,5 +104,204 @@ Page({
     this.setData({
       chosen: ''
     })
-  }
+  },
+
+
+  bindUpload: function (e) {
+    switch (this.data.imgs.length) {
+      case 0:
+        this.data.count = 3
+        break
+      case 1:
+        this.data.count = 2
+        break
+      case 2:
+        this.data.count = 1
+        break
+    }
+    var that = this
+    wx.chooseImage({
+      count: that.data.count, // 默认3
+      sizeType: ["original", "compressed"], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths
+        for (var i = 0; i < tempFilePaths.length; i++) {
+          wx.uploadFile({
+            url: 'https://graph.baidu.com/upload',
+            filePath: tempFilePaths[i],
+            name: "file",
+            header: {
+              "content-type": "multipart/form-data"
+            },
+            success: function (res) {
+              if (res.statusCode == 200) {
+                wx.showToast({
+                  title: "上传成功",
+                  icon: "none",
+                  duration: 1500
+                })
+   
+                that.data.imgs.push(JSON.parse(res.data).data)
+   
+                that.setData({
+                  imgs: that.data.imgs
+                })
+              }
+            },
+            fail: function (err) {
+              wx.showToast({
+                title: "上传失败",
+                icon: "none",
+                duration: 2000
+              })
+            },
+            complete: function (result) {
+              console.log(result.errMsg)
+            }
+          })
+        }
+      }
+    })
+  },
+  deleteImg: function (e) {
+    var that = this
+    wx.showModal({
+      title: "提示",
+      content: "是否删除",
+      success: function (res) {
+        if (res.confirm) {
+          for (var i = 0; i < that.data.imgs.length; i++) {
+            if (i == e.currentTarget.dataset.index) that.data.imgs.splice(i, 1)
+          }
+          that.setData({
+            imgs: that.data.imgs
+          })
+        } else if (res.cancel) {
+          console.log("用户点击取消")
+        }
+      }
+    })
+  },
+
+startRecordMp3: function () {
+    recorderManager.start({
+        format: 'mp3'
+    });
+}
+
+/**
+ * 停止录音
+ */
+,
+stopRecord: function () {
+    recorderManager.stop()
+    
+}
+
+/**
+ * 播放录音
+ */
+, playRecord: function () {
+    var that = this;
+    var src = this.data.src;
+    if (src == '') {
+        this.tip("请先录音！")
+        return;
+    }
+    this.innerAudioContext.src = this.data.src;
+    this.innerAudioContext.play()
+},
+sendRecord:  function() {
+  let that = this;
+  return new Promise(function (resolve, reject){
+  wx.uploadFile({
+    url: 'http://47.97.152.69:8080/voice/aip',
+    filePath: that.data.src,
+    formData: {
+      method: 'POST'
+    },
+    name: 'file',
+    success:(res)=>{
+      // console.log(res);
+
+      // console.log('test: '+res.data);
+      // var resData = res.data.replace(" ", "");
+      // //去掉utf8编码的BOM头
+      // resData = resData.replace(/\ufeff/g, "");
+      // console.log('test2: '+resData);
+      // var X = JSON.parse(resData);
+      resolve(res.data.result);
+      console.log(res.data.result);
+        that.data.notice_content;
+        resolve();
+    }
+});
+});
+},
+
+translate:function(){
+ let that=this;
+    wx.uploadFile({url: 'http://47.97.152.69:8080/voice/aip',
+    filePath: that.data.src,
+    formData: {
+      method: 'POST'
+    },
+    name: 'file',}).then(res => console.log(res))
+
+},
+
+tip: function (msg) {
+  wx.showModal({
+      title: '提示',
+      content: msg,
+      showCancel: false
+  })
+},
+onLoad: function (options) {
+
+
+  
+
+
+
+  var that = this;
+  recorderManager.onError(function () {
+      that.tip("录音失败！")
+  });
+  recorderManager.onStop(function (res) {
+      that.setData({
+          src: res.tempFilePath
+      })
+      console.log(res.tempFilePath)
+      that.tip("录音完成！")
+  });
+
+  this.innerAudioContext = wx.createInnerAudioContext();
+  this.innerAudioContext.onError((res) => {
+      that.tip("播放录音失败！")
+  })
+
+},
+  
+//日期
+
+onDisplay() {
+  this.setData({ show: true });
+},
+onClose() {
+  this.setData({ show: false });
+},
+formatDate(date) {
+  date = new Date(date);
+  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+},
+onConfirm(event) {
+  this.setData({
+    show: false,
+    date: this.formatDate(event.detail),
+  });
+  console.log(this.data)
+},
 })

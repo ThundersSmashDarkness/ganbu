@@ -19,8 +19,8 @@
   <van-grid-item icon="shop-o" text="养老商城" url="../shop/shop"/>
   <van-grid-item icon="records" text="发布"  url="../notice/notice"/>
   <van-grid-item icon="edit" badge="{{fangzaishangbaoshu}}" text="防灾上报处理" url="../FZSBCL/FZSBCL"/>
-  <van-grid-item icon="points" text="物资管理" url="../GAM/GAM" />
-  <van-grid-item icon="coupon-o" text="物资申请处理" url="../GAMHandle/GAMhandle"/>
+  <van-grid-item icon="points"  text="物资管理" url="../GAM/GAM" />
+  <van-grid-item icon="coupon-o" badge="{{wuzishenqingshu}}" text="物资申请处理" url="../GAMHandle/GAMhandle"/>
   <van-grid-item icon="comment-o" text="问题上报" url="../WTSB/WTSB"/>
 </van-grid>
 
@@ -35,7 +35,7 @@
 
 <van-swipe-cell
   id="swipe-cell"
-  wx:for="{{villagerNotice}}"
+  wx:for="{{notice_info}}"
   wx:key="id"
   right-width="{{ 65 }}"
   left-width="{{ 65 }}"
@@ -43,12 +43,11 @@
   bind:close="onClose"
   class="singleCELL"
 >
-  <view slot="left">选择</view>
+  <view slot="left">置顶</view>
   <van-cell-group>
-    <van-cell value="内容" icon="description"  is-link>
+    <van-cell value="点击查看详情"  label="{{item.date}}" icon="description"  url="../index/noticeDetail/noticeDetail?page={{item.id}}" is-link>
   <view slot="title">
-    <view class="van-cell-text">通知标题</view>
-    <van-tag type="danger">紧急通知</van-tag>
+    <view class="van-cell-text">{{item.title}}</view>
     
   </view>
 </van-cell>
@@ -113,3 +112,6 @@
 <view>
  <button bindtap="bindtest">后台test</button>
 </view>
+
+
+<van-dialog id="van-dialog" />

@@ -33,8 +33,8 @@
 
 
 <view class="my-bar1">
-	<van-cell icon="records" title="xxxxx" size="large" is-link url="/pages/sign/index" />
-	<van-cell icon="medal-o" title="xxxxx" size="large" is-link url="/pages/member-center/index" />
+	<van-cell icon="records" title="家庭查看" size="large" is-link url="../people/people" />
+	<van-cell icon="friends-o" title="网格员查看" size="large" is-link url="/pages/gridmanagement/gridmanagement" />
 	<van-cell icon="clock-o" title="xxxxx" size="large" is-link url="/pages/booking/index" />
 	<van-cell icon="gold-coin-o" title="xxxxx" size="large" is-link url="/pages/youhui-pay/index" />
 	<van-cell icon="desktop-o" title="xxxxx" is-link bind:click="goadmin" />

@@ -20,8 +20,7 @@
   <van-stepper value="{{foodvalue}}"  bind:change="onFoodChange" class="control_step_wrap" />
  </view>
 
-   
-
+  
   
   </van-tab>
 
@@ -97,6 +96,38 @@
 
  <van-stepper value="{{dailyvalue}}"  bind:change="onDailyChange" class="control_step_wrap" />
 </view>
-
   </van-tab>
 </van-tabs>
+
+
+<view class="GAM_bar">  
+
+   <view class="left_bar">
+
+     <view class="top_title">
+       剩余物资详情：
+     </view>
+     <view>
+     
+     </view>
+
+   </view>
+
+  <view class="right_bar">
+     <view class="right_son1">  
+    <view class="heiheihei"  bindtap="gotoaddGAM">添加物资</view>
+    <image class="arrow" src="../../icon/gengduo.png"></image>
+    </view>
+
+<view class="right_son1"> 
+<view class="heiheihei" bindtap="gotoGAMhistory">查询历史</view>
+    <image class="arrow" src="../../icon/gengduo.png"></image></view>
+
+        
+
+  </view>
+
+
+
+</view>
+

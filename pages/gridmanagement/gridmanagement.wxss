@@ -1,1 +1,13 @@
 /* pages/gridmanagement/gridmanagement.wxss */
+
+page{
+
+  background-color:#F1F2F4;
+
+}
+
+.wrap{
+
+  margin-top:30rpx;
+
+}

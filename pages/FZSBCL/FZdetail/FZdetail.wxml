@@ -1,0 +1,56 @@
+
+  <image class="image_wrap" mode="widthFix"  src="{{DATA.url}}"></image>
+
+
+
+<view class="biaoqian">
+  <van-tag wx:if="{{DATA.exceptional_case}}"  type="danger" size="large"  calss="biaoqian">特殊情况</van-tag>
+</view>
+
+
+<view class="biaoqian"> 
+    <van-tag wx:if="{{DATA.isDangerHouse}}" 
+      type="warning" size="large" calss="biaoqian">危房</van-tag>
+ </view>
+
+
+
+<view class="biaoqian"> 
+    <van-tag wx:if="{{DATA.isconfirmed}}"  type="success" size="large" calss="biaoqian">已与网格长确认</van-tag>
+  </view>
+
+
+
+
+
+<view class="text_wrap">
+家庭编号：{{DATA.house_id}}
+</view>
+
+<view class="text_wrap">
+特殊情况：{{DATA.special_case}}
+</view>
+
+<view class="text_wrap">
+房屋检测报表：{{DATA.house_quality}}
+</view>
+
+<view class="container">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+<view class="text">反馈内容</view>
+      <view class="text_tishi">可使用下方语音输入按钮快速输入</view>
+    <textarea class="text_area" value="{{notice_content}}" name="content"
+      maxlength="-1"></textarea>
+      <view class="bottom_button_wrap">
+      <van-button bindtap="voice_on">语音输入开始</van-button>
+      <van-button bindtap="voice_on">语音输入结束</van-button>
+    </view>
+      </form>
+
+</view>
+
+
+<view class="bottom_button_wrap">
+<van-button class="bottom_button" type="primary">通过</van-button>
+<van-button class="bottom_button"  type="warning">打回</van-button>
+</view>
