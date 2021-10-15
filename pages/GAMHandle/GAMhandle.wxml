@@ -85,7 +85,7 @@ class="singleCELL"
 <van-cell-group >
   <van-cell value="点击查看详情"  is-link url="../GAMHandle/GAMHandleDetail/GAMHandleDetail">
 <view slot="title">
-  <view class="van-cell-text">{{show_id}}的物资申请表</view>
+  <view class="van-cell-text">{{show .name}}的物资申请表</view>
 
 </view>
 </van-cell>

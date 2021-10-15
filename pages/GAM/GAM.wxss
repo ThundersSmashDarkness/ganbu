@@ -1,26 +1,32 @@
 /* pages/GAM/GAM.wxss */
 
+page{
 
+  background-color: #F1F2F4;
+
+}
 
 .circle_wrap{
   margin: 20rpx;
    width: 100%;
    display: flex;
-   margin-top: 80rpx;
+   margin-top: 20rpx;
    align-items: center;
   justify-content: center;
+  padding-top: 40rpx;
+  
 }
 
 .step_wrap{
   display:flex;
   margin-top: 50rpx;
-
+  padding-bottom: 10rpx;
 }
 
 .top_content{
 
- margin: 80rpx;
- margin-top: 20rpx;
+ margin: 20rpx 80rpx 20rpx 80rpx;
+ margin-bottom: 20rpx;
  width: 80%;
  font-weight: 600;
  color: red;
@@ -29,12 +35,14 @@
 .right_content{
 
    flex:6;
-   font-size: larger;
+   font-size: 38rpx;
+   font-weight: 500;
    margin-left:28rpx;
+   padding-left: 40rpx;
 }
 
 .control_step_wrap{
-  right: 0;
+  padding-right: 50rpx;
 }
 
 
@@ -52,21 +60,25 @@ padding: 10rpx;
 }
 
 .left_bar{
-  background-color:#a4a5a725;
+  background-color:white;
     flex:4;
     border-radius: 20rpx;
     margin: 5rpx;
+  
 }
+
+
 
 .right_bar{
   
    flex:4;
+ 
 
 }
 
 .right_son1{
   
-  background-color:#a4a5a725;
+  background-color:white;
   border-radius: 15rpx;
    height: 100rpx;
    margin: 5rpx;
@@ -93,5 +105,52 @@ margin-left: 110rpx;
 .top_title{
 
    text-align: center;
-   margin: 10rpx;
+   margin: 20rpx;
+   flex:8;
+   font-weight: 500;
+   font-size: 35rpx;
+}
+.left_text{
+
+flex:4;
+ text-align: right;
+
+}
+
+.rifht_stepper{
+
+flex:4;
+margin-right: 5rpx;
+
+}
+
+
+.box_wrap{
+display:flex;
+}
+
+.right_son_top_circle{
+
+background-color:white;
+border-radius: 15rpx;
+margin: 0rpx 10rpx 5rpx 10rpx;
+display: flex;
+
+align-items: center;
+justify-content: center;
+}
+
+.small_circle{
+
+padding-top: 10rpx;
+
+}
+
+.white_bar1{
+
+background-color: white;
+border-radius: 15rpx;
+margin-left: 5rpx;
+margin-right: 5rpx;
+
 }

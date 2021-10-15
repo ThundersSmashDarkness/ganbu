@@ -1,2 +1,22 @@
-<!--pages/GAMHandle/GAMHandleDetail/GAMHandleDetail.wxml-->
-<text>pages/GAMHandle/GAMHandleDetail/GAMHandleDetail.wxml</text>
+
+   <view class="top_title">物资申请表</view>
+
+<view class="wrap">
+<van-cell-group inset >
+  <van-cell title="姓名"  label="{{show.name}}"/>
+  <van-cell title="地点"  label="{{show.location}}"/>
+  <van-cell title="联系方式"  label="{{show.phone}}"/>
+  <van-cell title="所需食品(份)"  label="x{{show.food}}份"/>
+  <van-cell title="所需饮品(份)"  label="x{{show.drink}}份"/>
+  <van-cell title="所需药品(份)"  label="x{{show.medicine}}份"/>
+  <van-cell title="所需日用品(份)"  label="x{{show.yongpin}}份"/>
+
+</van-cell-group>
+</view>
+<view class="button_wrap">
+  <van-button round type="info" class="inner_wrap">同意申请</van-button>
+  <van-button round type="danger" class="inner_wrap">拒绝申请 </van-button>
+</view>
+
+
+

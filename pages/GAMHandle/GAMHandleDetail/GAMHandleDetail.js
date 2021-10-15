@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    show:{
+      name:"李四",
+    drink: "2",
+ food: "3",
+ location: "浙江省杭州市临平区外翁线 临平区十五堡(外翁线南)",
+ medicine: "1",
+ name: "李四",
+ num: "3",
+ phone: "13812345678",
+ yongpin: "2"
+   }
   },
 
   /**

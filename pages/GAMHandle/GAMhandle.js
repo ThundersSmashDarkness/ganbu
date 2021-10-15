@@ -11,10 +11,30 @@ Page({
    specialHouse:58,
    allReadyConfirm:68,
    dangerousHouse:77,
-   show_id:"黄十",
+   show:{
+     name:"李四",
+   drink: "2",
+food: "3",
+location: "浙江省杭州市临平区外翁线 临平区十五堡(外翁线南)",
+medicine: "1",
+name: "李四",
+num: "3",
+phone: "13812345678",
+yongpin: "2"
+  },
+
    number:[
-{id:"0",house_id:"张三",},
-{id:"1",house_id:"李四",},
+{id:"0",house_id:"张三",
+drink: "3",
+food: "3",
+location: "火灾避难区",
+medicine: "3",
+name: "张三",
+num: "3",
+phone: "15812345678",
+yongpin: "3"
+},
+{id:"1",house_id:"杨四",},
 {id:"2",house_id:"赵五",},
 {id:"3",house_id:"刘六",},
 {id:"4",house_id:"陈七",},

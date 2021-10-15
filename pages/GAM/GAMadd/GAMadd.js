@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+ //日期
+  
+ date: '',
+ show: false,
   },
 
   /**
@@ -62,5 +65,25 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  
+  //日期
+  
+  onDisplay:function() {
+    this.setData({ show: true });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  formatDate(date) {
+    date = new Date(date);
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+  },
+  onConfirm(event) {
+    this.setData({
+      show: false,
+      date: this.formatDate(event.detail),
+    });
+    console.log(this.data)
+  },
 })

@@ -1,14 +1,18 @@
 <!--pages/GAM/GAM.wxml-->
 <van-tabs active="{{ active }}" bind:change="onChange">
   <van-tab title="食品">
+
+
   <view class="top_content">
   
    注意：请根据物资剩余容量和总量进行计算后调整百分比。
   
   </view>
-  <van-divider contentPosition="left">食品存量环状图</van-divider>
+
+  <view class="white_bar1">
+
   <view  class="circle_wrap">
-    <van-circle value="{{foodvalue}}" text="食品存量" speed="10000" stroke-width="28" layer-color="#eeeeee" color="#0ac496" size="250" max="500" class="circle" />
+    <van-circle value="{{foodvalue}}" text="食品存量" speed="10000" stroke-width="28" layer-color="#eeeeee" color="#0ac496" size="250" max="500" class="circle" step="0.1"/>
   </view>
 
  <view class="step_wrap">
@@ -18,16 +22,11 @@
   </view>
 
   <van-stepper value="{{foodvalue}}"  bind:change="onFoodChange" class="control_step_wrap" />
+
  </view>
 
-  
-  
+</view>
   </van-tab>
-
-
-
-
-
 
 
   <van-tab title="饮品">
@@ -36,7 +35,9 @@
   注意：请根据物资剩余容量和总量进行计算后调整百分比。
  
  </view>
- <van-divider contentPosition="left">饮品存量环状图</van-divider>
+ 
+ <view class="white_bar1">
+
  <view  class="circle_wrap">
    <van-circle value="{{drinkvalue}}" text="饮品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#3f7ffc" size="250" max="500" class="circle" />
  </view>
@@ -50,6 +51,8 @@
  <van-stepper value="{{drinkvalue}}"  bind:change="onDrinkChange" class="control_step_wrap" />
 </view>
 
+</view>
+
   </van-tab>
 
 
@@ -61,7 +64,9 @@
   注意：请根据物资剩余容量和总量进行计算后调整百分比。
  
  </view>
- <van-divider contentPosition="left">药品存量环状图</van-divider>
+ 
+ <view class="white_bar1">
+
  <view  class="circle_wrap">
    <van-circle value="{{medicalvalue}}" text="药品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#FAEBD7" size="250" max="500" class="circle" />
  </view>
@@ -75,17 +80,22 @@
  <van-stepper value="{{medicalvalue}}"  bind:change="onMedicalChange" class="control_step_wrap" />
 </view>
 
-  
+  </view>
   </van-tab>
+
+
+
   <van-tab title="日用品">
     <view class="top_content">
   
   注意：请根据物资剩余容量和总量进行计算后调整百分比。
  
  </view>
- <van-divider contentPosition="left">食品存量环状图</van-divider>
+ 
+
+ <view class="white_bar1">
  <view  class="circle_wrap">
-   <van-circle value="{{dailyvalue}}" text="食品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#7FFFD4" size="250" max="500" class="circle" />
+   <van-circle value="{{dailyvalue}}" text="日用品存量{{percent}}" stroke-width="28" layer-color="#eeeeee" color="#7FFFD4" size="250" max="500" class="circle" />
  </view>
 
 <view class="step_wrap">
@@ -96,6 +106,9 @@
 
  <van-stepper value="{{dailyvalue}}"  bind:change="onDailyChange" class="control_step_wrap" />
 </view>
+
+
+</view>
   </van-tab>
 </van-tabs>
 
@@ -105,15 +118,52 @@
    <view class="left_bar">
 
      <view class="top_title">
-       剩余物资详情：
+       剩余物资详情
      </view>
-     <view>
-     
+    
+
+
+   <view class="box_wrap">
+   <view class="left_text">食品份数：</view>
+   <view class="rifht_stepper">
+     <van-stepper value="{{ foodleft }}" input-width="100rpx" button-size="34rpx" class="rifht_stepper"/>
      </view>
+    </view>
+
+    <view class="box_wrap">
+   <view class="left_text">饮品份数：</view>
+   <view class="rifht_stepper">
+     <van-stepper value="{{ drinkleft }}" input-width="100rpx" button-size="34rpx" class="rifht_stepper"/>
+     </view>
+    </view>
+
+    <view class="box_wrap">
+   <view class="left_text">药品份数：</view>
+   <view class="rifht_stepper">
+     <van-stepper value="{{ medicalleft }}" input-width="100rpx" button-size="34rpx" class="rifht_stepper"/>
+     </view>
+    </view>
+
+    <view class="box_wrap">
+   <view class="left_text">日用份数：</view>
+   <view class="rifht_stepper">
+     <van-stepper value="{{ dailyleft }}" input-width="100rpx" button-size="34rpx" class="rifht_stepper"/>
+     </view>
+    </view>
+
+
 
    </view>
 
   <view class="right_bar">
+
+
+<view class="right_son_top_circle">
+
+<van-circle value="{{foodvalue}}" text="{{foodvalue}}%" speed="10000" stroke-width="12" layer-color="#eeeeee" color="#0ac496" class="small_circle"/>
+
+</view>
+
      <view class="right_son1">  
     <view class="heiheihei"  bindtap="gotoaddGAM">添加物资</view>
     <image class="arrow" src="../../icon/gengduo.png"></image>
@@ -121,7 +171,9 @@
 
 <view class="right_son1"> 
 <view class="heiheihei" bindtap="gotoGAMhistory">查询历史</view>
-    <image class="arrow" src="../../icon/gengduo.png"></image></view>
+    <image class="arrow" src="../../icon/gengduo.png"></image>
+    
+    </view>
 
         
 

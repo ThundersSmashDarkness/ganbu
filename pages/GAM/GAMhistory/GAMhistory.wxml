@@ -1,2 +1,4 @@
-<!--pages/GAM/GAMhistory/GAMhistory.wxml-->
-<text>pages/GAM/GAMhistory/GAMhistory.wxml</text>
+
+<van-cell-group title="历史记录">
+<van-cell center wx:for="{{GAMhistory}}"  title="{{item.title}}" value="食品:x{{item.food}} 饮品:x{{item.drink}}药品:x{{item.medical}} 日用品:x{{item.daily}}" label="{{item.date}}" />
+</van-cell-group>

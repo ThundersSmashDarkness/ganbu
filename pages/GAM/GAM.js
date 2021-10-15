@@ -9,7 +9,13 @@ Page({
     foodvalue:50,
     drinkvalue:50,
     medicalvalue:30,
-    dailyvalue:20
+    dailyvalue:20,
+    foodleft:21000,
+    drinkleft:18510,
+    medicalleft:8888,
+    dailyleft:12310,
+
+   
   },
   onChange(event) {
     wx.showToast({

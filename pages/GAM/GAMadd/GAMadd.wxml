@@ -1,2 +1,63 @@
-<!--pages/GAM/GAMadd/GAMadd.wxml-->
-<text>pages/GAM/GAMadd/GAMadd.wxml</text>
+
+<view class="note">
+提示：请根据物资援助详情填写，并将物资分类后计算份数。
+</view>
+
+<view class="container">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset" >
+
+<view class="infomation">
+      <view class="wrap">
+      <view class="text">物资来源</view>
+      <input class="notice_input" name="agency" placeholder="物资来源机构" />
+    </view>
+
+      <view class="wrap">
+      <view class="text">食品</view>
+      <input class="notice_input" name="title" placeholder="数量（份数）" />
+    </view>
+
+      <view class="wrap">
+      <view class="text">饮品</view>
+      <input class="notice_input" name="type" placeholder="数量（份数）" />
+    </view>
+    <view class="wrap">
+      <view class="text">药品</view>
+      <input class="notice_input" name="type" placeholder="数量（份数）" />
+    </view>
+    <view class="wrap">
+      <view class="text">日用品</view>
+      <input class="notice_input" name="type" placeholder="数量（份数）" />
+    </view>
+
+
+
+
+   
+
+
+  </view>
+
+ 
+
+
+
+<van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
+<van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
+
+
+
+      <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit" >提交</button>
+        <button style="margin: 30rpx 0" formType="reset">重填</button>
+      </view>
+    </form>
+  </view>
+
+
+    <view class="van-hairline--surround"></view>
+
+</view>
+
+

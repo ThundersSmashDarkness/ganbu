@@ -137,6 +137,24 @@
           "pathName": "pages/gridmanagement/gridmanagement",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/GAMHandle/GAMHandleDetail/GAMHandleDetail",
+          "pathName": "pages/GAMHandle/GAMHandleDetail/GAMHandleDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/GAM/GAMhistory/GAMhistory",
+          "pathName": "pages/GAM/GAMhistory/GAMhistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/GAM/GAMadd/GAMadd",
+          "pathName": "pages/GAM/GAMadd/GAMadd",
+          "query": "",
+          "scene": null
         }
       ]
     }
